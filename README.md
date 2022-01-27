@@ -30,3 +30,9 @@ cd noVNC/ && ./utils/launch.sh --vnc localhost:5900
 ./utils/novnc_proxy --vnc 192.168.50.171:5901
 ```
 TODO 
+
+## PYNQ
+
+See the detail in the announcement: [Link](https://discuss.pynq.io/t/pynq-now-available-for-the-kria-kv260-vision-ai-starter-kit/3579)
+
+
