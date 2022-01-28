@@ -35,4 +35,8 @@ TODO
 
 See the detail in the announcement: [Link](https://discuss.pynq.io/t/pynq-now-available-for-the-kria-kv260-vision-ai-starter-kit/3579)
 
+Run the Jupyter (password: xilinx)
+
+![image](https://user-images.githubusercontent.com/16217256/151502021-d09e9d54-8a67-4f9d-99e6-7344637af665.png)
+
 
