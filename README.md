@@ -1,5 +1,10 @@
 # dt-kv260
 
+This repo is intended to setup a Duckiebot with Xilinx KV260
+
+![IMG_20220126_103157_HDR](https://user-images.githubusercontent.com/16217256/151703633-d8d277d3-aaec-4e7f-bb28-01b2bd9e8b9a.jpg)
+
+
 ## Essential Installation
 
 ### Edimax wifi dongle Driver
