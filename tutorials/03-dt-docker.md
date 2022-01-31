@@ -5,7 +5,7 @@ What docker images are in the Duckiebot?
 ```
 docker images
 ```
-|                                     |         | Base                  |
+| ----------------------------------- | ------- | --------------------- | ----------- |
 | duckietown/dt-device-dashboard      | 500MB   | compose               |
 | duckietown/dt-system-monitor        | 2.23GB  | dt-commons            |
 | duckietown/dt-drone-interface       | 2.34GB  | 
