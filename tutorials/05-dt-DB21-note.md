@@ -17,10 +17,15 @@ https://docs.duckietown.org/daffy/opmanual_duckiebot/out/assembling_duckiebot_db
 | [List all robots]之前沒有這樣的功能，比較是先每一台設定好固定IP後，在一台一台找 | dts fleet discovery會以hostname為主，不需要設定固定IP | [問題] 如何讓一台machine被找到，原理為何？[問題] 第一次開機完成後，萬一有兩台小鴨車用相同的duckiebot名稱 是可以的嗎？這樣dts fleet會不會有問題？要是有問題的話看起來就每一台小鴨車都要做一次燒錄 sd card的動作 |
 
 If hostname.local is not found?
+
 Containers: what open the compose to get dashboard?
+
 Containers: check each one doing
+
 dts fleet discover: how to let dts find my machine?
+
 dts for xbee
+
 ```
 RESTful API 
 https://youtu.be/7YcW25PHnAA
