@@ -15,18 +15,16 @@ https://docs.duckietown.org/daffy/opmanual_duckiebot/out/assembling_duckiebot_db
 | [First Boot Initialization]之前對拷完成就可以開機沒有檢查硬體 | 第一次開機不需要裝在小鴨車上 | 燒錄後，第一次開機initialization前會建議先用對拷機複製幾片，以避免第一次開機失敗建議確認Jetson Nano是好的（例如用Duckieboat SD卡確認可以開機）[問題] 第一次開機initialztion，究竟是完成了哪些以前要手動設定的？any ssh key? 照推斷應該都和init sd card給的參數有關 |
 | [Finish Initialization]之前不用 | initialization 後用 dts fleet指令確認 | [問題] 第一次開機完成後，是否會有桌面？還是只有command line? 有桌面的話好像可以用AnyDesk?[問題] 第一次開機完成後，user 帳號密碼是什麼？ |
 | [List all robots]之前沒有這樣的功能，比較是先每一台設定好固定IP後，在一台一台找 | dts fleet discovery會以hostname為主，不需要設定固定IP | [問題] 如何讓一台machine被找到，原理為何？[問題] 第一次開機完成後，萬一有兩台小鴨車用相同的duckiebot名稱 是可以的嗎？這樣dts fleet會不會有問題？要是有問題的話看起來就每一台小鴨車都要做一次燒錄 sd card的動作 |
+
 If hostname.local is not found?
-
 Containers: what open the compose to get dashboard?
-
 Containers: check each one doing
-
 dts fleet discover: how to let dts find my machine?
-
 dts for xbee
-
-
-
+```
+RESTful API 
+https://youtu.be/7YcW25PHnAA
+```
 
 
 
