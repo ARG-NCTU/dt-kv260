@@ -29,3 +29,13 @@ This repo is intended to setup a Duckiebot with Xilinx KV260
 | 18      | ----     | ----            | XX GB, dt-kv-xx | senior Lu       |
 | 19      | ----     | ----            | XX GB, dt-kv-xx | Jacopo          |
 | 20      | ----     | ----            | XX GB, dt-kv-xx | Jacopo          |
+
+## List of DB21
+
+| Labels  | KV/J/RPi | SD Card Label   | Status          | Who is using    |
+| --------| -------- | --------------  | --------------  | --------------- |
+| 01      | ----     | ----            | Assembled       |           |
+| 02      | ----     | ----            | Opened          |           |
+| 03      | ----     | ----            | Open3d          |           |
+| 04      | ----     | ----            | Brand New       |           |
+| 05      | ----     | ----            | Brand New       |           |
