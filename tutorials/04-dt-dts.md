@@ -15,12 +15,20 @@ Duckietown Shell
 
 https://docs.duckietown.org/daffy/opmanual_duckiebot/out/laptop_setup.html
 
+## Init SD card
+
+https://docs.duckietown.org/daffy/opmanual_duckiebot/out/setup_duckiebot.html
+
 ## Fleet
 
 Discovers Duckietown robots in the local network. [code](https://github.com/ARG-NCTU/duckietown-shell-commands/blob/daffy/fleet/discover/command.py)
 ```
 dts fleet discover
 ```
+
+## Open a terminal
+
+https://docs.duckietown.org/daffy/opmanual_duckiebot/out/using_no_vnc.html
 
 ### Avahi
 * Avahi is a system which facilitates service discovery on a local network via the mDNS/DNS-SD protocol suite. This enables you to plug your laptop or computer into a network and instantly be able to view other people who you can chat with, find printers to print to or find files being shared. Compatible technology is found in Apple MacOS X (branded "Bonjour" and sometimes "Zeroconf").
