@@ -5,6 +5,8 @@ What docker images are in the Duckiebot?
 ```
 docker images
 ```
+https://github.com/ezrafollower/dt-kv260/blob/main/tutorials/img/dts_docker_images_graph.drawio.png
+
 
 | Docker Images on Duckiebot          | Size     | Base Image   | Description | Repo Link |
 | ----------------------------------- | -------- | ------------ | ----------- | --------- |
