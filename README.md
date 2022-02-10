@@ -7,6 +7,25 @@ This repo is intended to setup a Duckiebot with Xilinx KV260
 
 ## List of KV-260
 
-| Labels  | Hostname | IP Address      | SD Card Status  | Who is using |
-| --------| -------- | --------------  | --------------  | ------------ |
-| 01      | kria     | 192.168.50.xx   | XX GB, dt-kv-xx | Nick |   
+| Labels  | Hostname | IP Address      | SD Card Status  | Who is using    |
+| --------| -------- | --------------  | --------------  | --------------- |
+| 01      | kria     | 192.168.50.xx   | XX GB, dt-kv-xx | Nick            |   
+| 02      | ----     | ----            | XX GB, dt-kv-xx | Prof. Lai's lab |
+| 03      | ----     | ----            | XX GB, dt-kv-xx | Prof. Lai's lab |
+| 04      | ----     | ----            | XX GB, dt-kv-xx | Ezra            |
+| 05      | kria     | 192.168.50.137  | XX GB, dt-kv-xx | Louis           |
+| 06      | ----     | ----            | XX GB, dt-kv-xx | MF              |
+| 07      | ----     | ----            | XX GB, dt-kv-xx | ----            |
+| 08      | ----     | ----            | XX GB, dt-kv-xx | ----            |
+| 09      | ----     | ----            | XX GB, dt-kv-xx | ----            |
+| 10      | ----     | ----            | XX GB, dt-kv-xx | ----            |
+| 11      | ----     | ----            | XX GB, dt-kv-xx | ----            |
+| 12      | ----     | ----            | XX GB, dt-kv-xx | ----            |
+| 13      | ----     | ----            | XX GB, dt-kv-xx | ----            |
+| 14      | ----     | ----            | XX GB, dt-kv-xx | ----            |
+| 15      | ----     | ----            | XX GB, dt-kv-xx | ----            |
+| 16      | ----     | ----            | XX GB, dt-kv-xx | ----            |
+| 17      | ----     | ----            | XX GB, dt-kv-xx | ----            |
+| 18      | ----     | ----            | XX GB, dt-kv-xx | senior Lu       |
+| 19      | ----     | ----            | XX GB, dt-kv-xx | Jacopo          |
+| 20      | ----     | ----            | XX GB, dt-kv-xx | Jacopo          |
