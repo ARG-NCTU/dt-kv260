@@ -32,10 +32,10 @@ This repo is intended to setup a Duckiebot with Xilinx KV260
 
 ## List of DB21
 
-| Labels  | KV/J/RPi | SD Card Label   | Status          | Who is using    |
+| Labels  | KV/JNano/RPi | SD Card Label   | Status      | Who is using    |
 | --------| -------- | --------------  | --------------  | --------------- |
-| 01      | ----     | ----            | Assembled       |           |
-| 02      | ----     | ----            | Opened          |           |
-| 03      | ----     | ----            | Open3d          |           |
-| 04      | ----     | ----            | Brand New       |           |
-| 05      | ----     | ----            | Brand New       |           |
+| 01      | KV260    | ----            | HW Upgrading    | Nick      |
+| 02      | JNano    | ----            | Assembled       | Ezra      |
+| 03      | JNano    | ----            | Assembled       | Brian     |
+| 04      | RPi3     | ----            | Assembling      | Bory      |
+| 05      | RPi3     | ----            | Brand New       | Julie     |
