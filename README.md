@@ -8,32 +8,33 @@ This repo is intended to setup a Duckiebot with Xilinx KV260
 ## Hostname naming rule
 
 dt-"hardware"-"vehicle"-"number"
-ex: dt-nano-bot-01, dt-rpi-boat-03, dt-kv-anchor-07
 
-## List of KV-260
+Ex: dt-nano-bot-01, dt-rpi-boat-03, dt-kv260-anchor-07
 
-| Labels  | Hostname | IP Address      | SD Card Status  | Who is using    |
-| --------| -------- | --------------  | --------------  | --------------- |
-| 01      | kria     | 192.168.50.xx   | XX GB, dt-kv-xx | Nick            |   
-| 02      | ----     | ----            | XX GB, dt-kv-xx | Prof. Lai's lab |
-| 03      | ----     | ----            | XX GB, dt-kv-xx | Prof. Lai's lab |
-| 04      | ----     | ----            | XX GB, dt-kv-xx | Ezra            |
-| 05      | kria     | 192.168.50.137  | XX GB, dt-kv-xx | Louis           |
-| 06      | ----     | ----            | XX GB, dt-kv-xx | MF              |
-| 07      | ----     | ----            | XX GB, dt-kv-xx | ----            |
-| 08      | ----     | ----            | XX GB, dt-kv-xx | ----            |
-| 09      | ----     | ----            | XX GB, dt-kv-xx | ----            |
-| 10      | ----     | ----            | XX GB, dt-kv-xx | ----            |
-| 11      | ----     | ----            | XX GB, dt-kv-xx | ----            |
-| 12      | ----     | ----            | XX GB, dt-kv-xx | ----            |
-| 13      | ----     | ----            | XX GB, dt-kv-xx | ----            |
-| 14      | ----     | ----            | XX GB, dt-kv-xx | ----            |
-| 15      | ----     | ----            | XX GB, dt-kv-xx | ----            |
-| 16      | ----     | ----            | XX GB, dt-kv-xx | ----            |
-| 17      | ----     | ----            | XX GB, dt-kv-xx | ----            |
-| 18      | ----     | ----            | XX GB, dt-kv-xx | senior Lu       |
-| 19      | ----     | ----            | XX GB, dt-kv-xx | Jacopo          |
-| 20      | ----     | ----            | XX GB, dt-kv-xx | Jacopo          |
+## List of KV260
+
+| Hostname        | IP Address      | SD Card Status  | Who is using    |
+| --------------- | --------------  | --------------  | --------------- |
+| kria            | 192.168.50.171  | XX GB, dt-kv-xx | Nick            |
+| 02              | ----            | XX GB, dt-kv-xx | Prof. Lai's lab |
+| 03              | ----            | XX GB, dt-kv-xx | Prof. Lai's lab |
+| dt-kv260-bot-04 | 192.168.50.95   | XX GB, dt-kv-xx | Ezra            |
+| dt-kv260-bot-05 | 192.168.50.124  | XX GB, dt-kv-xx | Louis           |
+| 06              | ----            | XX GB, dt-kv-xx | MF              |
+| 07              | ----            | XX GB, dt-kv-xx | Bory            |
+| 08              | ----            | XX GB, dt-kv-xx | ----            |
+| 09              | ----            | XX GB, dt-kv-xx | ----            |
+| 10              | ----            | XX GB, dt-kv-xx | ----            |
+| 11              | ----            | XX GB, dt-kv-xx | ----            |
+| 12              | ----            | XX GB, dt-kv-xx | ----            |
+| 13              | ----            | XX GB, dt-kv-xx | ----            |
+| 14              | ----            | XX GB, dt-kv-xx | ----            |
+| 15              | ----            | XX GB, dt-kv-xx | ----            |
+| 16              | ----            | XX GB, dt-kv-xx | ----            |
+| 17              | ----            | XX GB, dt-kv-xx | ----            |
+| 18              | ----            | XX GB, dt-kv-xx | senior Lu       |
+| 19              | ----            | XX GB, dt-kv-xx | Jacopo          |
+| 20              | ----            | XX GB, dt-kv-xx | Jacopo          |
 
 ## List of DB21
 
