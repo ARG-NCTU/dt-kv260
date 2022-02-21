@@ -35,12 +35,12 @@ ex: dt-nano-bot-01, dt-rpi-boat-03, dt-kv-anchor-07
 | 19      | ----     | ----            | XX GB, dt-kv-xx | Jacopo          |
 | 20      | ----     | ----            | XX GB, dt-kv-xx | Jacopo          |
 
-## List of DB21
+## List of DuckieBot
 
 | Labels  | KV/JNano/RPi | SD Card Label   | Status      | Who is using    |
 | --------| -------- | --------------  | --------------  | --------------- |
-| 01      | KV260    | ----            | HW Upgrading    | Nick      |
-| 02      | JNano    | ----            | Assembled       | Ezra      |
-| 03      | JNano    | ----            | Assembled       | Brian     |
-| 04      | RPi3     | ----            | Assembling      | Bory      |
-| 05      | RPi3     | ----            | Brand New       | Julie     |
+| 01      | RPi3     | dt-rpi-bot-01   | Assembled       | Bory      |
+| 02      | ----     | ----            | Brand New       | Tippy     |
+| 03      | JNano    | dt-nano-bot-03  | Assembled       | Ezra      |
+| 04      | KV260    | dt-kv280-bot-04 | HW Upgrading    | Nick      |
+| 05      | ----     | ----            | Brand New       | Julie     |
