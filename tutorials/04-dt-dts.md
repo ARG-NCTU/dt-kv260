@@ -25,6 +25,12 @@ Discovers Duckietown robots in the local network. [code](https://github.com/ARG-
 ```
 dts fleet discover
 ```
+## Turn off the Duckiebot
+
+$ dts duckiebot reboot hostname
+
+$ dts duckiebot shutdown hostname
+
 
 ## Open a terminal
 
