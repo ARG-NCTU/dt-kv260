@@ -27,6 +27,10 @@ You call also determine this by running:
 
 $ docker -H DUCKIEBOT_NAME.local ps
 
+To manually start the duckiebot-interface, do:
+
+$ docker -H DUCKIEBOT_NAME.local run --name duckiebot-interface -v /data:/data --privileged --network=host -dit --restart unless-stopped duckietown/dt-duckiebot-interface:daffy-arm32v7
+
 ## Fleet
 
 Discovers Duckietown robots in the local network. [code](https://github.com/ARG-NCTU/duckietown-shell-commands/blob/daffy/fleet/discover/command.py)
