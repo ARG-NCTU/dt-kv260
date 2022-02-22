@@ -23,6 +23,10 @@ please follow the naming rule in https://github.com/ARG-NCTU/dt-kv260#readme
 
 make sure our bot and top are in the same network, for ARG lab we use EE622 network, you can plus it when initialing SD card using dts
 
+## camera
+
+https://www.rs-online.com/designspark/jetson-nano-opencv-cn
+
 ## avahi
 
 We should modify the following files:
