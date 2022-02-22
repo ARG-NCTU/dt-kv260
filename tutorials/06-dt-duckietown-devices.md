@@ -2,9 +2,21 @@
 
 ## hostname
 
+Type the following command to edit /etc/hostname using nano or vi text editor:
 ```
-sudo vim /etc/hostname
+sudo nano /etc/hostname
 ```
+Delete the old name and setup new name.
+Next Edit the /etc/hosts file:
+```
+sudo nano /etc/hosts
+```
+Replace any occurrence of the existing computer name with your new one.
+Reboot the system to changes take effect:
+```
+sudo reboot
+```
+
 please follow the naming rule in https://github.com/ARG-NCTU/dt-kv260#readme
 
 ## wifi
