@@ -19,6 +19,14 @@ https://docs.duckietown.org/daffy/opmanual_duckiebot/out/laptop_setup.html
 
 https://docs.duckietown.org/daffy/opmanual_duckiebot/out/setup_duckiebot.html
 
+## docker
+
+Open the Portainer interface and check the running containers. You should see one called duckiebot-interface, using image duckietown/dt-duckiebot-interface:daffy-arm32v7.
+
+You call also determine this by running:
+
+$ docker -H DUCKIEBOT_NAME.local ps
+
 ## Fleet
 
 Discovers Duckietown robots in the local network. [code](https://github.com/ARG-NCTU/duckietown-shell-commands/blob/daffy/fleet/discover/command.py)
