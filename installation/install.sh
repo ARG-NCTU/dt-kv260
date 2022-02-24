@@ -69,21 +69,21 @@ docker pull duckietown/dt-device-dashboard:daffy-arm64v8
 ###################################### Setup crucial files #####################################
 
 # copy services files to /etc/avahi/services
-sudo cp installation/services/* /etc/avahi/services
+sudo cp services/* /etc/avahi/services
 echo -e "\e[93m Copy services files to /etc/avahi/services done \e[0m"
 
 # copy bin files to /
-sudo cp installation/bin/* /usr/local/bin
+sudo cp bin/* /usr/local/bin
 echo -e "\e[93m Copy bin files to /usr/local/bin done \e[0m"
 
-# copy installation/data to /
-sudo cp -r installation/data /
+# copy data/ to /
+sudo cp -r data/ /
 echo -e "\e[93m Copy installation/data to / done \e[0m"
 
-# copy installation/triggers to /
-sudo cp -r installation/triggers /
+# copy triggers/ to /
+sudo cp -r triggers/ /
 echo -e "\e[93m Copy installation/triggers to / done \e[0m"
 
-# copy installation/secrets to /
-sudo cp -r installation/secrets /
+# copy secrets/ to /
+sudo cp -r secrets/ /
 echo -e "\e[93m Copy installation/secrets to / done \e[0m"
