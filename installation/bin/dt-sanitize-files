@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+dt-sanitize-file "/usr/local/bin/dt-init-any-boot"
+dt-sanitize-file "/usr/local/bin/dt-sanitize-files"
+dt-sanitize-file "/usr/local/bin/dt-init-first-boot"
+dt-sanitize-file "/etc/hostname"
+dt-sanitize-file "/etc/wpa_supplicant.conf"
+dt-sanitize-file "/etc/avahi/services/dt.robot_type.service"
+dt-sanitize-file "/etc/avahi/services/dt.robot_configuration.service"
+dt-sanitize-file "/secrets/tokens/dt1"
+dt-sanitize-file "/data/config/robot_configuration"
+dt-sanitize-file "/data/config/robot_type"
+dt-sanitize-file "/data/stats/init_sd_card/build.json"
