@@ -72,7 +72,7 @@ docker pull duckietown/dt-device-dashboard :daffy-arm64v8
 PASSWD=assistive
 
 # copy /data to /
-echo $PASSWD | sudo -S cp -r /data /
+echo $PASSWD | sudo -S cp -r ./data /
 
 # copy /services files to /etc/avahi/services
-echo $PASSWD | sudo -S cp /services/* /etc/avahi/services
+echo $PASSWD | sudo -S cp ./services/* /etc/avahi/services
