@@ -22,11 +22,11 @@ Ex: dt-nano-bot-01, dt-rpi-boat-03, dt-kv260-anchor-07
 | dt-kv260-bot-05 | 192.168.50.124  | XX GB, dt-kv-xx | Louis           |
 | dt-kv260-bot-06 | 192.168.50.51   | XX GB, dt-kv-xx | MF              |
 | dt-kv260-bot-07 | 192.168.50.183  | XX GB, dt-kv-xx | Bory            |
-| dt-kv260-bot-08 | 192.168.50.111  | XX GB, dt-kv-xx | ----            |
-| dt-kv260-bot-09 | 192.168.50.147  | XX GB, dt-kv-xx | ----            |
-| dt-kv260-bot-10 | 192.168.50.129  | XX GB, dt-kv-xx | ----            |
-| dt-kv260-bot-11 | 192.168.50.54   | XX GB, dt-kv-xx | ----            |
-| dt-kv260-bot-12 | 192.168.50.102  | XX GB, dt-kv-xx | ----            |
+| dt-kv260-bot-08 | 192.168.50.111  | XX GB, dt-kv-xx | L-Ray           |
+| dt-kv260-bot-09 | 192.168.50.147  | XX GB, dt-kv-xx | Sam             |
+| dt-kv260-bot-10 | 192.168.50.129  | XX GB, dt-kv-xx | Isabella        |
+| dt-kv260-bot-11 | 192.168.50.54   | XX GB, dt-kv-xx | Yellow          |
+| dt-kv260-bot-12 | 192.168.50.102  | XX GB, dt-kv-xx | Rick            |
 | 13              | ----            | XX GB, dt-kv-xx | ----            |
 | 14              | ----            | XX GB, dt-kv-xx | ----            |
 | 15              | ----            | XX GB, dt-kv-xx | ----            |
