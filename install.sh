@@ -64,15 +64,25 @@ docker pull duckietown/dt-system-monitor:daffy-arm64v8
 
 # dt-device-dashboard 
 echo -e "\e[93m Download dt-device-dashboard  docker image \e[0m"
-docker pull duckietown/dt-device-dashboard :daffy-arm64v8
+docker pull duckietown/dt-device-dashboard:daffy-arm64v8
 
 ###################################### Setup crucial files #####################################
 
 # password for ubuntu account
 PASSWD=assistive
 
-# copy /data to /
-echo $PASSWD | sudo -S cp -r ./data /
-
-# copy /services files to /etc/avahi/services
+# copy ./services files to /etc/avahi/services
 echo $PASSWD | sudo -S cp ./services/* /etc/avahi/services
+echo -e "\e[93m Copy ./services files to /etc/avahi/services done \e[0m"
+
+# copy ./data to /
+echo $PASSWD | sudo -S cp -r ./data /
+echo -e "\e[93m Copy ./data to / done \e[0m"
+
+# copy ./triggers to /
+echo $PASSWD | sudo -S cp -r ./triggers /
+echo -e "\e[93m Copy ./triggers to / done \e[0m"
+
+# copy ./secrets to /
+echo $PASSWD | sudo -S cp -r ./secrets /
+echo -e "\e[93m Copy ./secrets to / done \e[0m"
