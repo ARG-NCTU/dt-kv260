@@ -1,0 +1,571 @@
+0xffffff8000f70000-0xffffff8000f79000   36864 layout_and_allocate+0x924/0xde8 pages=8 vmalloc
+0xffffff8000f79000-0xffffff8000f7e000   20480 layout_and_allocate+0x924/0xde8 pages=4 vmalloc
+0xffffff8000f7e000-0xffffff8000f84000   24576 layout_and_allocate+0x924/0xde8 pages=5 vmalloc
+0xffffff8000f84000-0xffffff8000f87000   12288 layout_and_allocate+0x924/0xde8 pages=2 vmalloc
+0xffffff8000f87000-0xffffff8000f8c000   20480 layout_and_allocate+0x924/0xde8 pages=4 vmalloc
+0xffffff8000f8c000-0xffffff8000f8e000    8192 layout_and_allocate+0x924/0xde8 pages=1 vmalloc
+0xffffff8000f8f000-0xffffff8001112000 1585152 layout_and_allocate+0x924/0xde8 pages=386 vmalloc
+0xffffff8001112000-0xffffff800111f000   53248 layout_and_allocate+0x924/0xde8 pages=12 vmalloc
+0xffffff800111f000-0xffffff8001127000   32768 layout_and_allocate+0x924/0xde8 pages=7 vmalloc
+0xffffff8001127000-0xffffff800112e000   28672 layout_and_allocate+0x924/0xde8 pages=6 vmalloc
+0xffffff800112e000-0xffffff8001133000   20480 layout_and_allocate+0x924/0xde8 pages=4 vmalloc
+0xffffff8001133000-0xffffff800114e000  110592 layout_and_allocate+0x924/0xde8 pages=26 vmalloc
+0xffffff800114e000-0xffffff8001150000    8192 layout_and_allocate+0x924/0xde8 pages=1 vmalloc
+0xffffff8001150000-0xffffff8001153000   12288 layout_and_allocate+0x924/0xde8 pages=2 vmalloc
+0xffffff8001153000-0xffffff8001155000    8192 layout_and_allocate+0x924/0xde8 pages=1 vmalloc
+0xffffff8001155000-0xffffff8001157000    8192 layout_and_allocate+0x924/0xde8 pages=1 vmalloc
+0xffffff8001158000-0xffffff800115e000   24576 layout_and_allocate+0x924/0xde8 pages=5 vmalloc
+0xffffff800115e000-0xffffff8001160000    8192 layout_and_allocate+0x924/0xde8 pages=1 vmalloc
+0xffffff8001162000-0xffffff8001164000    8192 layout_and_allocate+0x924/0xde8 pages=1 vmalloc
+0xffffff8001166000-0xffffff800116a000   16384 layout_and_allocate+0x924/0xde8 pages=3 vmalloc
+0xffffff800116b000-0xffffff800116e000   12288 layout_and_allocate+0x924/0xde8 pages=2 vmalloc
+0xffffff800116e000-0xffffff8001170000    8192 layout_and_allocate+0x924/0xde8 pages=1 vmalloc
+0xffffff8001170000-0xffffff8001201000  593920 layout_and_allocate+0x924/0xde8 pages=144 vmalloc
+0xffffff8001201000-0xffffff800120a000   36864 layout_and_allocate+0x924/0xde8 pages=8 vmalloc
+0xffffff800122a000-0xffffff800122f000   20480 layout_and_allocate+0x924/0xde8 pages=4 vmalloc
+0xffffff800122f000-0xffffff800150e000 3010560 layout_and_allocate+0x924/0xde8 pages=734 vmalloc vpages
+0xffffff8008000000-0xffffff8008002000    8192 of_iomap+0x48/0x68 phys=50041000 ioremap
+0xffffff8008002000-0xffffff8008004000    8192 of_iomap+0x48/0x68 phys=50042000 ioremap
+0xffffff8008004000-0xffffff8008006000    8192 of_iomap+0x48/0x68 phys=60004000 ioremap
+0xffffff8008006000-0xffffff8008008000    8192 of_iomap+0x48/0x68 phys=60004000 ioremap
+0xffffff8008008000-0xffffff800800a000    8192 of_iomap+0x48/0x68 phys=60004000 ioremap
+0xffffff800800a000-0xffffff800800c000    8192 of_iomap+0x48/0x68 phys=60004000 ioremap
+0xffffff800800c000-0xffffff800800e000    8192 of_iomap+0x48/0x68 phys=60004000 ioremap
+0xffffff800800e000-0xffffff8008010000    8192 of_iomap+0x48/0x68 phys=60004000 ioremap
+0xffffff8008010000-0xffffff8008012000    8192 of_iomap+0x48/0x68 phys=60006000 ioremap
+0xffffff8008012000-0xffffff8008014000    8192 of_iomap+0x48/0x68 phys=7000e000 ioremap
+0xffffff8008014000-0xffffff8008016000    8192 of_iomap+0x48/0x68 phys=60005000 ioremap
+0xffffff8008016000-0xffffff8008018000    8192 tegra_init_apbmisc+0x88/0x128 phys=70000000 ioremap
+0xffffff8008018000-0xffffff800801a000    8192 tegra_init_apbmisc+0xa8/0x128 phys=70000000 ioremap
+0xffffff800801a000-0xffffff800801c000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800801c000-0xffffff800801e000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800801e000-0xffffff8008020000    8192 SyS_swapon+0x858/0xe60 pages=1 vmalloc
+0xffffff8008020000-0xffffff8008022000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff8008022000-0xffffff8008024000    8192 devm_ioremap+0x58/0xb0 phys=70019000 ioremap
+0xffffff8008024000-0xffffff8008026000    8192 devm_ioremap+0x58/0xb0 phys=6000c000 ioremap
+0xffffff8008026000-0xffffff8008028000    8192 tegra_flowctrl_init+0x7c/0x98 phys=60007000 ioremap
+0xffffff8008028000-0xffffff800802a000    8192 tegra210_powergate_init_chip_support+0x28/0xf0 phys=70019000 ioremap
+0xffffff800802a000-0xffffff800802c000    8192 tegra210_powergate_init_chip_support+0x4c/0xf0 phys=60006000 ioremap
+0xffffff800802c000-0xffffff800802e000    8192 tegra_debug_uart_syscore_init+0x80/0x118 phys=70006000 ioremap
+0xffffff800802e000-0xffffff8008030000    8192 of_iomap+0x48/0x68 phys=70019000 ioremap
+0xffffff8008030000-0xffffff8008041000   69632 persistent_ram_new+0x2a8/0x478 phys=b0000000 ioremap
+0xffffff8008041000-0xffffff8008043000    8192 of_iomap+0x48/0x68 phys=70019000 ioremap
+0xffffff8008043000-0xffffff8008045000    8192 of_iomap+0x48/0x68 phys=70019000 ioremap
+0xffffff8008045000-0xffffff8008047000    8192 of_iomap+0x48/0x68 phys=70019000 ioremap
+0xffffff8008047000-0xffffff8008049000    8192 of_iomap+0x48/0x68 phys=70019000 ioremap
+0xffffff8008049000-0xffffff800804b000    8192 of_iomap+0x48/0x68 phys=70019000 ioremap
+0xffffff800804b000-0xffffff800804d000    8192 of_iomap+0x48/0x68 phys=70019000 ioremap
+0xffffff800804d000-0xffffff800804f000    8192 of_iomap+0x48/0x68 phys=70019000 ioremap
+0xffffff8008050000-0xffffff8008061000   69632 persistent_ram_new+0x2a8/0x478 phys=b0010000 ioremap
+0xffffff8008061000-0xffffff8008063000    8192 of_iomap+0x48/0x68 phys=70019000 ioremap
+0xffffff8008063000-0xffffff8008065000    8192 of_iomap+0x48/0x68 phys=70019000 ioremap
+0xffffff8008065000-0xffffff8008067000    8192 of_iomap+0x48/0x68 phys=7001c000 ioremap
+0xffffff8008067000-0xffffff8008069000    8192 of_iomap+0x48/0x68 phys=7001c000 ioremap
+0xffffff8008069000-0xffffff800806b000    8192 of_iomap+0x48/0x68 phys=7001c000 ioremap
+0xffffff800806b000-0xffffff800806d000    8192 of_iomap+0x48/0x68 phys=7001c000 ioremap
+0xffffff800806d000-0xffffff800806f000    8192 of_iomap+0x48/0x68 phys=7001c000 ioremap
+0xffffff800806f000-0xffffff8008071000    8192 of_iomap+0x48/0x68 phys=7001c000 ioremap
+0xffffff8008071000-0xffffff8008073000    8192 of_iomap+0x48/0x68 phys=7001c000 ioremap
+0xffffff8008073000-0xffffff8008075000    8192 of_iomap+0x48/0x68 phys=7001c000 ioremap
+0xffffff8008075000-0xffffff8008077000    8192 of_iomap+0x48/0x68 phys=7001c000 ioremap
+0xffffff8008077000-0xffffff8008079000    8192 of_iomap+0x48/0x68 phys=7001c000 ioremap
+0xffffff8008079000-0xffffff800807b000    8192 of_iomap+0x48/0x68 phys=7001d000 ioremap
+0xffffff800807b000-0xffffff800807d000    8192 of_iomap+0x48/0x68 phys=7001d000 ioremap
+0xffffff800807d000-0xffffff800807f000    8192 of_iomap+0x48/0x68 phys=7001d000 ioremap
+0xffffff8008080000-0xffffff8008f70000 15663104 paging_init+0x7c/0x7a4 phys=83280000 vmap
+0xffffff8008f70000-0xffffff8009600000 6881280 paging_init+0xa4/0x7a4 phys=84170000 vmap
+0xffffff8009600000-0xffffff8009e60000 8781824 paging_init+0xc4/0x7a4 phys=84800000 vmap
+0xffffff8009e60000-0xffffff800a1dd000 3657728 paging_init+0xe8/0x7a4 phys=85060000 vmap
+0xffffff800a1dd000-0xffffff800a1df000    8192 of_iomap+0x48/0x68 phys=7001d000 ioremap
+0xffffff800a1e0000-0xffffff800a1f1000   69632 persistent_ram_new+0x2a8/0x478 phys=b0020000 ioremap
+0xffffff800a1f1000-0xffffff800a1f3000    8192 of_iomap+0x48/0x68 phys=7001d000 ioremap
+0xffffff800a1f3000-0xffffff800a1f5000    8192 of_iomap+0x48/0x68 phys=7001d000 ioremap
+0xffffff800a1f5000-0xffffff800a1f7000    8192 of_iomap+0x48/0x68 phys=7001d000 ioremap
+0xffffff800a1f7000-0xffffff800a1f9000    8192 of_iomap+0x48/0x68 phys=7001d000 ioremap
+0xffffff800a1f9000-0xffffff800a1fb000    8192 of_iomap+0x48/0x68 phys=7001d000 ioremap
+0xffffff800a1fb000-0xffffff800a1fd000    8192 of_iomap+0x48/0x68 phys=7001d000 ioremap
+0xffffff800a1fd000-0xffffff800a1ff000    8192 devm_ioremap+0x58/0xb0 phys=70000000 ioremap
+0xffffff800a200000-0xffffff800a211000   69632 persistent_ram_new+0x2a8/0x478 phys=b0030000 ioremap
+0xffffff800a211000-0xffffff800a213000    8192 devm_ioremap+0x58/0xb0 phys=70003000 ioremap
+0xffffff800a213000-0xffffff800a215000    8192 devm_ioremap+0x58/0xb0 phys=7000e000 ioremap
+0xffffff800a215000-0xffffff800a217000    8192 devm_ioremap+0x58/0xb0 phys=6000d000 ioremap
+0xffffff800a217000-0xffffff800a219000    8192 devm_ioremap+0x58/0xb0 phys=7000f000 ioremap
+0xffffff800a219000-0xffffff800a21b000    8192 devm_ioremap+0x58/0xb0 phys=7000c000 ioremap
+0xffffff800a21b000-0xffffff800a21d000    8192 devm_ioremap+0x58/0xb0 phys=7000c000 ioremap
+0xffffff800a21d000-0xffffff800a21f000    8192 devm_ioremap+0x58/0xb0 phys=7000c000 ioremap
+0xffffff800a220000-0xffffff800a231000   69632 persistent_ram_new+0x2a8/0x478 phys=b0040000 ioremap
+0xffffff800a231000-0xffffff800a233000    8192 devm_ioremap+0x58/0xb0 phys=7000c000 ioremap
+0xffffff800a233000-0xffffff800a235000    8192 devm_ioremap+0x58/0xb0 phys=7000d000 ioremap
+0xffffff800a235000-0xffffff800a237000    8192 devm_ioremap+0x58/0xb0 phys=7000d000 ioremap
+0xffffff800a237000-0xffffff800a239000    8192 devm_ioremap+0x58/0xb0 phys=700e3000 ioremap
+0xffffff800a239000-0xffffff800a23b000    8192 of_iomap+0x48/0x68 phys=70019000 ioremap
+0xffffff800a23b000-0xffffff800a23d000    8192 of_iomap+0x48/0x68 phys=60006000 ioremap
+0xffffff800a23d000-0xffffff800a23f000    8192 devm_ioremap+0x58/0xb0 phys=7001b000 ioremap
+0xffffff800a240000-0xffffff800a251000   69632 persistent_ram_new+0x2a8/0x478 phys=b0050000 ioremap
+0xffffff800a251000-0xffffff800a253000    8192 devm_ioremap+0x58/0xb0 phys=7001e000 ioremap
+0xffffff800a253000-0xffffff800a255000    8192 devm_ioremap+0x58/0xb0 phys=7001f000 ioremap
+0xffffff800a255000-0xffffff800a257000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a257000-0xffffff800a259000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a259000-0xffffff800a25c000   12288 nvhost_push_buffer_alloc+0xb0/0x178 user
+0xffffff800a25c000-0xffffff800a25f000   12288 nvhost_push_buffer_alloc+0xb0/0x178 user
+0xffffff800a260000-0xffffff800a271000   69632 persistent_ram_new+0x2a8/0x478 phys=b0060000 ioremap
+0xffffff800a271000-0xffffff800a274000   12288 nvhost_push_buffer_alloc+0xb0/0x178 user
+0xffffff800a274000-0xffffff800a277000   12288 nvhost_push_buffer_alloc+0xb0/0x178 user
+0xffffff800a277000-0xffffff800a27a000   12288 nvhost_push_buffer_alloc+0xb0/0x178 user
+0xffffff800a27a000-0xffffff800a27d000   12288 nvhost_push_buffer_alloc+0xb0/0x178 user
+0xffffff800a27d000-0xffffff800a280000   12288 nvhost_push_buffer_alloc+0xb0/0x178 user
+0xffffff800a280000-0xffffff800a291000   69632 persistent_ram_new+0x2a8/0x478 phys=b0070000 ioremap
+0xffffff800a291000-0xffffff800a294000   12288 nvhost_push_buffer_alloc+0xb0/0x178 user
+0xffffff800a294000-0xffffff800a297000   12288 nvhost_push_buffer_alloc+0xb0/0x178 user
+0xffffff800a297000-0xffffff800a29a000   12288 nvhost_push_buffer_alloc+0xb0/0x178 user
+0xffffff800a29a000-0xffffff800a29d000   12288 nvhost_push_buffer_alloc+0xb0/0x178 user
+0xffffff800a29d000-0xffffff800a2a0000   12288 nvhost_push_buffer_alloc+0xb0/0x178 user
+0xffffff800a2a0000-0xffffff800a2b1000   69632 persistent_ram_new+0x2a8/0x478 phys=b0080000 ioremap
+0xffffff800a2b2000-0xffffff800a2b5000   12288 of_iomap+0x48/0x68 phys=702f9000 ioremap
+0xffffff800a2b6000-0xffffff800a2b9000   12288 of_iomap+0x48/0x68 phys=702fa000 ioremap
+0xffffff800a2b9000-0xffffff800a2bb000    8192 devm_ioremap+0x58/0xb0 phys=7009f000 ioremap
+0xffffff800a2bb000-0xffffff800a2bd000    8192 devm_ioremap+0x58/0xb0 phys=7000a000 ioremap
+0xffffff800a2bd000-0xffffff800a2bf000    8192 devm_ioremap+0x58/0xb0 phys=70110000 ioremap
+0xffffff800a2c0000-0xffffff800a2d1000   69632 persistent_ram_new+0x2a8/0x478 phys=b0090000 ioremap
+0xffffff800a2d1000-0xffffff800a2d3000    8192 devm_ioremap+0x58/0xb0 phys=1000000 ioremap
+0xffffff800a2d3000-0xffffff800a2d5000    8192 devm_ioremap+0x58/0xb0 phys=1001000 ioremap
+0xffffff800a2d5000-0xffffff800a2d7000    8192 devm_ioremap+0x58/0xb0 phys=1003000 ioremap
+0xffffff800a2d7000-0xffffff800a2d9000    8192 devm_ioremap+0x58/0xb0 phys=1003000 ioremap
+0xffffff800a2d9000-0xffffff800a2db000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a2db000-0xffffff800a2dd000    8192 devm_ioremap+0x58/0xb0 phys=70015000 ioremap
+0xffffff800a2dd000-0xffffff800a2df000    8192 devm_ioremap+0x58/0xb0 phys=6000c000 ioremap
+0xffffff800a2e0000-0xffffff800a2f1000   69632 persistent_ram_new+0x2a8/0x478 phys=b00a0000 ioremap
+0xffffff800a2f1000-0xffffff800a2f3000    8192 devm_ioremap+0x58/0xb0 phys=70110000 ioremap
+0xffffff800a2f3000-0xffffff800a2f5000    8192 devm_ioremap+0x58/0xb0 phys=70110000 ioremap
+0xffffff800a2f5000-0xffffff800a2f7000    8192 devm_ioremap+0x58/0xb0 phys=70110000 ioremap
+0xffffff800a2f7000-0xffffff800a2f9000    8192 devm_ioremap+0x58/0xb0 phys=70110000 ioremap
+0xffffff800a2fa000-0xffffff800a2fd000   12288 devm_ioremap+0x58/0xb0 phys=60020000 ioremap
+0xffffff800a2fd000-0xffffff800a2ff000    8192 devm_ioremap+0x58/0xb0 phys=702ec000 ioremap
+0xffffff800a300000-0xffffff800a311000   69632 persistent_ram_new+0x2a8/0x478 phys=b00b0000 ioremap
+0xffffff800a312000-0xffffff800a315000   12288 devm_ioremap+0x58/0xb0 phys=702e2000 ioremap
+0xffffff800a315000-0xffffff800a317000    8192 devm_ioremap+0x58/0xb0 phys=7000f000 ioremap
+0xffffff800a317000-0xffffff800a31c000   20480 tegra_i2c_init_dma_param+0xb4/0x280 user
+0xffffff800a31c000-0xffffff800a31e000    8192 serial8250_request_std_resource+0xfc/0x130 phys=70006000 ioremap
+0xffffff800a31e000-0xffffff800a320000    8192 devm_ioremap+0x58/0xb0 phys=70006000 ioremap
+0xffffff800a320000-0xffffff800a331000   69632 persistent_ram_new+0x2a8/0x478 phys=b00c0000 ioremap
+0xffffff800a331000-0xffffff800a336000   20480 tegra_i2c_init_dma_param+0xb4/0x280 user
+0xffffff800a336000-0xffffff800a338000    8192 devm_ioremap+0x58/0xb0 phys=70006000 ioremap
+0xffffff800a338000-0xffffff800a33c000   16384 tegra_fb_register+0x450/0x5e0 user
+0xffffff800a33c000-0xffffff800a33f000   12288 pcpu_mem_zalloc+0x50/0x80 pages=2 vmalloc
+0xffffff800a340000-0xffffff800a351000   69632 persistent_ram_new+0x2a8/0x478 phys=b00d0000 ioremap
+0xffffff800a351000-0xffffff800a353000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a353000-0xffffff800a355000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a355000-0xffffff800a357000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a357000-0xffffff800a359000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a35a000-0xffffff800a35f000   20480 tegra_i2c_init_dma_param+0xb4/0x280 user
+0xffffff800a360000-0xffffff800a371000   69632 persistent_ram_new+0x2a8/0x478 phys=b00e0000 ioremap
+0xffffff800a371000-0xffffff800a373000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a373000-0xffffff800a375000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a375000-0xffffff800a377000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a377000-0xffffff800a379000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a37a000-0xffffff800a37f000   20480 tegra_i2c_init_dma_param+0xb4/0x280 user
+0xffffff800a380000-0xffffff800a391000   69632 persistent_ram_new+0x2a8/0x478 phys=b00f0000 ioremap
+0xffffff800a391000-0xffffff800a393000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a393000-0xffffff800a395000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a395000-0xffffff800a397000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a397000-0xffffff800a399000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a39a000-0xffffff800a39c000    8192 devm_ioremap+0x58/0xb0 phys=7000d000 ioremap
+0xffffff800a39c000-0xffffff800a39e000    8192 devm_ioremap+0x58/0xb0 phys=7000d000 ioremap
+0xffffff800a39e000-0xffffff800a3a0000    8192 devm_ioremap+0x58/0xb0 phys=70098000 ioremap
+0xffffff800a3a0000-0xffffff800a3b1000   69632 persistent_ram_new+0x2a8/0x478 phys=b0100000 ioremap
+0xffffff800a3b1000-0xffffff800a3b3000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a3b3000-0xffffff800a3b5000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a3b5000-0xffffff800a3b7000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a3b7000-0xffffff800a3b9000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a3ba000-0xffffff800a3bf000   20480 tegra_spi_init_dma_param+0xb4/0x278 user
+0xffffff800a3c0000-0xffffff800a3d1000   69632 persistent_ram_new+0x2a8/0x478 phys=b0110000 ioremap
+0xffffff800a3d1000-0xffffff800a3d3000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a3d3000-0xffffff800a3d5000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a3d5000-0xffffff800a3d7000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a3d7000-0xffffff800a3d9000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a3da000-0xffffff800a3df000   20480 tegra_spi_init_dma_param+0xb4/0x278 user
+0xffffff800a3e0000-0xffffff800a3f1000   69632 persistent_ram_new+0x2a8/0x478 phys=b0120000 ioremap
+0xffffff800a3f1000-0xffffff800a3f3000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a3f3000-0xffffff800a3f5000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800a3f5000-0xffffff800a3f7000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a3f7000-0xffffff800a3f9000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a3fa000-0xffffff800a3ff000   20480 tegra_spi_init_dma_param+0xb4/0x278 user
+0xffffff800a400000-0xffffff800a411000   69632 persistent_ram_new+0x2a8/0x478 phys=b0130000 ioremap
+0xffffff800a411000-0xffffff800a41a000   36864 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a41a000-0xffffff800a41f000   20480 tegra_spi_init_dma_param+0xb4/0x278 user
+0xffffff800a420000-0xffffff800a431000   69632 persistent_ram_new+0x2a8/0x478 phys=b0140000 ioremap
+0xffffff800a431000-0xffffff800a436000   20480 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a436000-0xffffff800a438000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a438000-0xffffff800a43a000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a43a000-0xffffff800a43c000    8192 devm_ioremap+0x58/0xb0 phys=70410000 ioremap
+0xffffff800a43c000-0xffffff800a43e000    8192 devm_ioremap+0x58/0xb0 phys=70099000 ioremap
+0xffffff800a43e000-0xffffff800a440000    8192 xhci_mem_init+0x1dc/0xb68 user
+0xffffff800a440000-0xffffff800a451000   69632 persistent_ram_new+0x2a8/0x478 phys=b0150000 ioremap
+0xffffff800a451000-0xffffff800a45a000   36864 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a45a000-0xffffff800a45c000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800a45c000-0xffffff800a45e000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800a45e000-0xffffff800a460000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800a460000-0xffffff800a471000   69632 persistent_ram_new+0x2a8/0x478 phys=b0160000 ioremap
+0xffffff800a471000-0xffffff800a47a000   36864 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a47a000-0xffffff800a47c000    8192 xhci_mem_init+0x55c/0xb68 user
+0xffffff800a47c000-0xffffff800a47e000    8192 xhci_mem_init+0xa6c/0xb68 user
+0xffffff800a47e000-0xffffff800a480000    8192 xhci_mem_init+0x920/0xb68 user
+0xffffff800a480000-0xffffff800a491000   69632 persistent_ram_new+0x2a8/0x478 phys=b0170000 ioremap
+0xffffff800a491000-0xffffff800a4a6000   86016 iommu_dma_alloc+0x458/0x4b8 pages=20 vmalloc
+0xffffff800a4a6000-0xffffff800a4a8000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a4a8000-0xffffff800a4b2000   40960 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a4b2000-0xffffff800a4b4000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a4b4000-0xffffff800a4b6000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a4b6000-0xffffff800a4b8000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a4b8000-0xffffff800a4ba000    8192 xhci_mem_init+0x920/0xb68 user
+0xffffff800a4ba000-0xffffff800a4bc000    8192 devm_ioremap+0x58/0xb0 phys=700d8000 ioremap
+0xffffff800a4bc000-0xffffff800a4be000    8192 devm_ioremap+0x58/0xb0 phys=700d9000 ioremap
+0xffffff800a4be000-0xffffff800a4c0000    8192 tegra_xudc_probe+0xdf8/0x1450 user
+0xffffff800a4c0000-0xffffff800a4f5000  217088 devm_ioremap+0x58/0xb0 phys=546c0000 ioremap
+0xffffff800a4f5000-0xffffff800a4fb000   24576 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a4fb000-0xffffff800a4fd000    8192 __nvgpu_vzalloc+0x28/0x78 [nvgpu] pages=1 vmalloc
+0xffffff800a4fe000-0xffffff800a500000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800a500000-0xffffff800a581000  528384 persistent_ram_new+0x2a8/0x478 phys=b0180000 ioremap
+0xffffff800a581000-0xffffff800a682000 1052672 atomic_pool_init+0x0/0x24c user
+0xffffff800a682000-0xffffff800a6a3000  135168 __nvgpu_vzalloc+0x28/0x78 [nvgpu] pages=32 vmalloc
+0xffffff800a6a3000-0xffffff800a6a6000   12288 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a6a7000-0xffffff800a6b8000   69632 tegra_qspi_init_dma_param+0xb4/0x280 user
+0xffffff800a6b8000-0xffffff800a6ba000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800a6ba000-0xffffff800a6bc000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800a6bc000-0xffffff800a6be000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800a6be000-0xffffff800a6c0000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800a6c0000-0xffffff800a701000  266240 tegra210_powergate_init_chip_support+0x68/0xf0 phys=702c0000 ioremap
+0xffffff800a701000-0xffffff800a712000   69632 tegra_qspi_init_dma_param+0xb4/0x280 user
+0xffffff800a712000-0xffffff800a714000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800a714000-0xffffff800a716000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800a716000-0xffffff800a718000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800a718000-0xffffff800a721000   36864 devm_ioremap+0x58/0xb0 phys=70090000 ioremap
+0xffffff800a721000-0xffffff800a723000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800a723000-0xffffff800a725000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800a725000-0xffffff800a727000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800a728000-0xffffff800a731000   36864 devm_ioremap+0x58/0xb0 phys=700d0000 ioremap
+0xffffff800a731000-0xffffff800a735000   16384 tegra_fb_register+0x450/0x5e0 user
+0xffffff800a735000-0xffffff800a73a000   20480 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a73a000-0xffffff800a73e000   16384 iommu_dma_alloc+0x458/0x4b8 pages=3 vmalloc
+0xffffff800a73e000-0xffffff800a740000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a740000-0xffffff800a781000  266240 tegra210_powergate_init_chip_support+0x84/0xf0 phys=54200000 ioremap
+0xffffff800a781000-0xffffff800a792000   69632 __nvgpu_vzalloc+0x28/0x78 [nvgpu] pages=16 vmalloc
+0xffffff800a792000-0xffffff800a79b000   36864 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a79b000-0xffffff800a79e000   12288 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a79e000-0xffffff800a7a0000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a7a1000-0xffffff800a7b2000   69632 tegra_xudc_probe+0xc64/0x1450 user
+0xffffff800a7b2000-0xffffff800a7b4000    8192 devm_ioremap+0x58/0xb0 phys=7000e000 ioremap
+0xffffff800a7b4000-0xffffff800a7b6000    8192 devm_ioremap+0x58/0xb0 phys=700e2000 ioremap
+0xffffff800a7b6000-0xffffff800a7b8000    8192 devm_ioremap+0x58/0xb0 phys=60005000 ioremap
+0xffffff800a7b8000-0xffffff800a7ba000    8192 devm_ioremap+0x58/0xb0 phys=60005000 ioremap
+0xffffff800a7ba000-0xffffff800a7bc000    8192 devm_ioremap+0x58/0xb0 phys=700b0000 ioremap
+0xffffff800a7bc000-0xffffff800a7bf000   12288 sdhci_setup_host+0x938/0xe78 user
+0xffffff800a7c0000-0xffffff800a801000  266240 tegra210_powergate_init_chip_support+0xa0/0xf0 phys=54340000 ioremap
+0xffffff800a801000-0xffffff800a821000  131072 tegra_xusb_probe_finish+0x3ac/0x828 user
+0xffffff800a821000-0xffffff800a832000   69632 tegra_xudc_probe+0xc64/0x1450 user
+0xffffff800a832000-0xffffff800a835000   12288 devm_ioremap+0x58/0xb0 phys=70012000 ioremap
+0xffffff800a835000-0xffffff800a837000    8192 tegra_se_probe+0x5bc/0xfc8 user
+0xffffff800a837000-0xffffff800a839000    8192 tegra_se_probe+0x9e0/0xfc8 user
+0xffffff800a839000-0xffffff800a83b000    8192 dmam_alloc_coherent+0x9c/0x108 user
+0xffffff800a83b000-0xffffff800a83d000    8192 dmam_alloc_coherent+0x9c/0x108 user
+0xffffff800a83d000-0xffffff800a83f000    8192 tegra_se_probe+0xbb8/0xfc8 user
+0xffffff800a840000-0xffffff800a875000  217088 devm_ioremap+0x58/0xb0 phys=50000000 ioremap
+0xffffff800a875000-0xffffff800a877000    8192 devm_ioremap+0x58/0xb0 phys=6000c000 ioremap
+0xffffff800a877000-0xffffff800a879000    8192 snd_dma_alloc_pages+0x16c/0x1d8 phys=fa82a000 user
+0xffffff800a879000-0xffffff800a87b000    8192 snd_dma_alloc_pages+0x16c/0x1d8 phys=fa82b000 user
+0xffffff800a87b000-0xffffff800a87d000    8192 snd_dma_alloc_pages+0x16c/0x1d8 phys=fa82c000 user
+0xffffff800a87d000-0xffffff800a87f000    8192 snd_dma_alloc_pages+0x16c/0x1d8 phys=fa82d000 user
+0xffffff800a880000-0xffffff800a8c1000  266240 devm_ioremap+0x58/0xb0 phys=54500000 ioremap
+0xffffff800a8c1000-0xffffff800a8c3000    8192 snd_dma_alloc_pages+0x16c/0x1d8 phys=fa82e000 user
+0xffffff800a8c3000-0xffffff800a8c5000    8192 snd_dma_alloc_pages+0x16c/0x1d8 phys=fa82f000 user
+0xffffff800a8c5000-0xffffff800a8c7000    8192 snd_dma_alloc_pages+0x16c/0x1d8 phys=fa830000 user
+0xffffff800a8c7000-0xffffff800a8c9000    8192 snd_dma_alloc_pages+0x16c/0x1d8 phys=fa831000 user
+0xffffff800a8c9000-0xffffff800a8cb000    8192 devm_ioremap+0x58/0xb0 phys=702d0000 ioremap
+0xffffff800a8cb000-0xffffff800a8cd000    8192 devm_ioremap+0x58/0xb0 phys=702d0000 ioremap
+0xffffff800a8cd000-0xffffff800a8cf000    8192 devm_ioremap+0x58/0xb0 phys=702d1000 ioremap
+0xffffff800a8d0000-0xffffff800a8e1000   69632 devm_ioremap+0x58/0xb0 phys=70030000 ioremap
+0xffffff800a8e1000-0xffffff800a8e3000    8192 devm_ioremap+0x58/0xb0 phys=702d1000 ioremap
+0xffffff800a8e3000-0xffffff800a8e5000    8192 devm_ioremap+0x58/0xb0 phys=702d4000 ioremap
+0xffffff800a8e5000-0xffffff800a8e7000    8192 devm_ioremap+0x58/0xb0 phys=702d4000 ioremap
+0xffffff800a8e7000-0xffffff800a8e9000    8192 devm_ioremap+0x58/0xb0 phys=702d3000 ioremap
+0xffffff800a8e9000-0xffffff800a8eb000    8192 devm_ioremap+0x58/0xb0 phys=702d3000 ioremap
+0xffffff800a8eb000-0xffffff800a8ed000    8192 devm_ioremap+0x58/0xb0 phys=702d3000 ioremap
+0xffffff800a8ed000-0xffffff800a8ef000    8192 devm_ioremap+0x58/0xb0 phys=702d3000 ioremap
+0xffffff800a8f0000-0xffffff800a8f3000   12288 devm_ioremap+0x58/0xb0 phys=702db000 ioremap
+0xffffff800a8f3000-0xffffff800a8f5000    8192 devm_ioremap+0x58/0xb0 phys=702d2000 ioremap
+0xffffff800a8f5000-0xffffff800a8f7000    8192 devm_ioremap+0x58/0xb0 phys=702d2000 ioremap
+0xffffff800a8f7000-0xffffff800a8f9000    8192 devm_ioremap+0x58/0xb0 phys=702d2000 ioremap
+0xffffff800a8f9000-0xffffff800a8fb000    8192 devm_ioremap+0x58/0xb0 phys=702d2000 ioremap
+0xffffff800a8fb000-0xffffff800a8fd000    8192 devm_ioremap+0x58/0xb0 phys=702d7000 ioremap
+0xffffff800a8fd000-0xffffff800a8ff000    8192 devm_ioremap+0x58/0xb0 phys=702d7000 ioremap
+0xffffff800a900000-0xffffff800a941000  266240 devm_ioremap+0x58/0xb0 phys=54100000 ioremap
+0xffffff800a941000-0xffffff800a943000    8192 devm_ioremap+0x58/0xb0 phys=702d7000 ioremap
+0xffffff800a943000-0xffffff800a945000    8192 devm_ioremap+0x58/0xb0 phys=702d7000 ioremap
+0xffffff800a945000-0xffffff800a947000    8192 devm_ioremap+0x58/0xb0 phys=702d7000 ioremap
+0xffffff800a947000-0xffffff800a949000    8192 devm_ioremap+0x58/0xb0 phys=702d7000 ioremap
+0xffffff800a949000-0xffffff800a94b000    8192 devm_ioremap+0x58/0xb0 phys=702da000 ioremap
+0xffffff800a94b000-0xffffff800a94d000    8192 devm_ioremap+0x58/0xb0 phys=702da000 ioremap
+0xffffff800a94d000-0xffffff800a94f000    8192 devm_ioremap+0x58/0xb0 phys=702d8000 ioremap
+0xffffff800a94f000-0xffffff800a951000    8192 devm_ioremap+0x58/0xb0 phys=702d8000 ioremap
+0xffffff800a951000-0xffffff800a953000    8192 devm_ioremap+0x58/0xb0 phys=702d8000 ioremap
+0xffffff800a953000-0xffffff800a955000    8192 devm_ioremap+0x58/0xb0 phys=702d8000 ioremap
+0xffffff800a955000-0xffffff800a957000    8192 devm_ioremap+0x58/0xb0 phys=702d8000 ioremap
+0xffffff800a957000-0xffffff800a959000    8192 devm_ioremap+0x58/0xb0 phys=702d8000 ioremap
+0xffffff800a959000-0xffffff800a95b000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800a95b000-0xffffff800a95d000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800a95d000-0xffffff800a95f000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800a95f000-0xffffff800a961000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800a961000-0xffffff800a96a000   36864 tegra_alt_pcm_preallocate_dma_buffer+0x98/0x100 user
+0xffffff800a96a000-0xffffff800a973000   36864 tegra_alt_pcm_preallocate_dma_buffer+0x98/0x100 user
+0xffffff800a973000-0xffffff800a97c000   36864 tegra_alt_pcm_preallocate_dma_buffer+0x98/0x100 user
+0xffffff800a97c000-0xffffff800a97e000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a97e000-0xffffff800a980000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800a980000-0xffffff800a9c1000  266240 devm_ioremap+0x58/0xb0 phys=54480000 ioremap
+0xffffff800a9c1000-0xffffff800a9ca000   36864 tegra_alt_pcm_preallocate_dma_buffer+0x98/0x100 user
+0xffffff800a9ca000-0xffffff800a9d3000   36864 tegra_alt_pcm_preallocate_dma_buffer+0x98/0x100 user
+0xffffff800a9d3000-0xffffff800a9dc000   36864 tegra_alt_pcm_preallocate_dma_buffer+0x98/0x100 user
+0xffffff800a9dc000-0xffffff800a9e5000   36864 tegra_alt_pcm_preallocate_dma_buffer+0x98/0x100 user
+0xffffff800a9e5000-0xffffff800a9ee000   36864 tegra_alt_pcm_preallocate_dma_buffer+0x98/0x100 user
+0xffffff800a9ee000-0xffffff800a9f7000   36864 tegra_alt_pcm_preallocate_dma_buffer+0x98/0x100 user
+0xffffff800a9f7000-0xffffff800aa00000   36864 tegra_alt_pcm_preallocate_dma_buffer+0x98/0x100 user
+0xffffff800aa00000-0xffffff800aa41000  266240 devm_ioremap+0x58/0xb0 phys=54340000 ioremap
+0xffffff800aa41000-0xffffff800aa4a000   36864 tegra_alt_pcm_preallocate_dma_buffer+0x98/0x100 user
+0xffffff800aa4a000-0xffffff800aa53000   36864 tegra_alt_pcm_preallocate_dma_buffer+0x98/0x100 user
+0xffffff800aa53000-0xffffff800aa5c000   36864 tegra_alt_pcm_preallocate_dma_buffer+0x98/0x100 user
+0xffffff800aa5c000-0xffffff800aa65000   36864 tegra_alt_pcm_preallocate_dma_buffer+0x98/0x100 user
+0xffffff800aa65000-0xffffff800aa6e000   36864 tegra_alt_pcm_preallocate_dma_buffer+0x98/0x100 user
+0xffffff800aa6e000-0xffffff800aa77000   36864 tegra_alt_pcm_preallocate_dma_buffer+0x98/0x100 user
+0xffffff800aa77000-0xffffff800aa80000   36864 tegra_alt_pcm_preallocate_dma_buffer+0x98/0x100 user
+0xffffff800aa80000-0xffffff800aac1000  266240 devm_ioremap+0x58/0xb0 phys=544c0000 ioremap
+0xffffff800aac1000-0xffffff800aaca000   36864 tegra_alt_pcm_preallocate_dma_buffer+0x98/0x100 user
+0xffffff800aaca000-0xffffff800aad3000   36864 tegra_alt_pcm_preallocate_dma_buffer+0x98/0x100 user
+0xffffff800aad3000-0xffffff800aadc000   36864 tegra_alt_pcm_preallocate_dma_buffer+0x98/0x100 user
+0xffffff800aadc000-0xffffff800aae6000   40960 tegra_edid_get_monspecs+0x2c/0xbd8 pages=9 vmalloc
+0xffffff800aae6000-0xffffff800aae8000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800aae8000-0xffffff800aaea000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800aaea000-0xffffff800aaec000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800aaec000-0xffffff800aaee000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800aaee000-0xffffff800aaf0000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800aaf0000-0xffffff800aaf7000   28672 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800aaf7000-0xffffff800aaf9000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800aaf9000-0xffffff800aafb000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800aafb000-0xffffff800aafd000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800aafd000-0xffffff800aaff000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800ab00000-0xffffff800ab41000  266240 devm_ioremap+0x58/0xb0 phys=54380000 ioremap
+0xffffff800ab41000-0xffffff800ab43000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800ab43000-0xffffff800ab45000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800ab45000-0xffffff800ab47000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800ab47000-0xffffff800ab49000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800ab49000-0xffffff800ab4b000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800ab4b000-0xffffff800ab4d000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800ab4d000-0xffffff800ab4f000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800ab4f000-0xffffff800ab51000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800ab51000-0xffffff800ab53000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800ab53000-0xffffff800ab55000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800ab55000-0xffffff800ab57000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800ab57000-0xffffff800ab59000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800ab59000-0xffffff800ab5b000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800ab5b000-0xffffff800ab5d000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800ab5d000-0xffffff800ab5f000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800ab5f000-0xffffff800ab61000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800ab61000-0xffffff800ab63000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800ab63000-0xffffff800ab65000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800ab65000-0xffffff800ab67000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800ab67000-0xffffff800ab69000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800ab69000-0xffffff800ab7d000   81920 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800ab7d000-0xffffff800ab80000   12288 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800ab80000-0xffffff800abc1000  266240 of_iomap+0x48/0x68 phys=54200000 ioremap
+0xffffff800abc1000-0xffffff800abc3000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800abc3000-0xffffff800abca000   28672 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800abca000-0xffffff800abcc000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800abcc000-0xffffff800abce000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800abce000-0xffffff800abd0000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800abd0000-0xffffff800abd2000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800abd2000-0xffffff800abd4000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800abd4000-0xffffff800abd6000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800abd6000-0xffffff800abd8000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800abd8000-0xffffff800abda000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800abda000-0xffffff800abdc000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800abdc000-0xffffff800abde000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800abde000-0xffffff800abe0000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800abe0000-0xffffff800abe2000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800abe2000-0xffffff800abe4000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800abe4000-0xffffff800abe6000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800abe6000-0xffffff800abe8000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800abe8000-0xffffff800abea000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800abea000-0xffffff800abec000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800abec000-0xffffff800abee000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800abee000-0xffffff800abf0000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800abf0000-0xffffff800abf3000   12288 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800abf3000-0xffffff800abf5000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800abf5000-0xffffff800abfc000   28672 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800abfc000-0xffffff800abfe000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800abfe000-0xffffff800ac00000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800ac00000-0xffffff800ac41000  266240 of_iomap+0x48/0x68 phys=54040000 ioremap
+0xffffff800ac41000-0xffffff800ac43000    8192 tegra_pcie_enable_msi+0x304/0x360 phys=fa828000 user
+0xffffff800ac43000-0xffffff800ac45000    8192 tegra_pcie_add_bus+0xd8/0x100 phys=11fff000 ioremap
+0xffffff800ac45000-0xffffff800ac56000   69632 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800ac57000-0xffffff800ac59000    8192 rtl8168_init_one+0x22c/0x1248 phys=13004000 ioremap
+0xffffff800ac59000-0xffffff800ac5c000   12288 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800ac5c000-0xffffff800ac5e000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800ac5e000-0xffffff800ac60000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800ac60000-0xffffff800ac62000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800ac62000-0xffffff800ac64000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800ac64000-0xffffff800ac66000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800ac66000-0xffffff800ac68000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800ac68000-0xffffff800ac6a000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800ac6a000-0xffffff800ac6c000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800ac6c000-0xffffff800ac6e000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800ac6e000-0xffffff800ac70000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800ac70000-0xffffff800ac72000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800ac72000-0xffffff800ac74000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800ac74000-0xffffff800ac76000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800ac76000-0xffffff800ac7d000   28672 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800ac7e000-0xffffff800ac80000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800ac80000-0xffffff800acc1000  266240 of_iomap+0x48/0x68 phys=54580000 ioremap
+0xffffff800acc1000-0xffffff800d4c2000 41947136 tegra_fb_check_and_alloc_framebuffer+0x108/0x148 user vpages
+0xffffff800d4c2000-0xffffff800d4c4000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4c4000-0xffffff800d4c6000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4c6000-0xffffff800d4c8000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4c8000-0xffffff800d4ca000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4ca000-0xffffff800d4cc000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4cc000-0xffffff800d4ce000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4ce000-0xffffff800d4d0000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4d0000-0xffffff800d4d2000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4d2000-0xffffff800d4d4000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4d4000-0xffffff800d4d6000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4d6000-0xffffff800d4d8000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4d8000-0xffffff800d4da000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4da000-0xffffff800d4dc000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4dc000-0xffffff800d4de000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4de000-0xffffff800d4e0000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4e0000-0xffffff800d4e2000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4e2000-0xffffff800d4e4000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4e4000-0xffffff800d4e6000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4e6000-0xffffff800d4e8000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4e8000-0xffffff800d4ea000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4ea000-0xffffff800d4ec000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4ec000-0xffffff800d4ee000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4ee000-0xffffff800d4f0000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4f0000-0xffffff800d4f2000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4f2000-0xffffff800d4f4000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4f4000-0xffffff800d4f6000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4f6000-0xffffff800d4f8000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4f8000-0xffffff800d4fa000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4fa000-0xffffff800d4fc000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4fc000-0xffffff800d4fe000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d4fe000-0xffffff800d500000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d500000-0xffffff800d541000  266240 of_iomap+0x48/0x68 phys=54240000 ioremap
+0xffffff800d541000-0xffffff800d543000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d543000-0xffffff800d545000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d545000-0xffffff800d547000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d547000-0xffffff800d549000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d549000-0xffffff800d54b000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d54b000-0xffffff800d54d000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d54d000-0xffffff800d54f000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d54f000-0xffffff800d551000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d551000-0xffffff800d556000   20480 pcpu_mem_zalloc+0x50/0x80 pages=4 vmalloc
+0xffffff800d556000-0xffffff800d558000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d558000-0xffffff800d55a000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d55a000-0xffffff800d55c000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d55c000-0xffffff800d55e000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d55e000-0xffffff800d560000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d560000-0xffffff800d562000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d562000-0xffffff800d564000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d564000-0xffffff800d566000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d566000-0xffffff800d568000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d568000-0xffffff800d56a000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d56a000-0xffffff800d56c000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d56c000-0xffffff800d56e000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d56e000-0xffffff800d570000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d570000-0xffffff800d572000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d572000-0xffffff800d574000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d574000-0xffffff800d576000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d576000-0xffffff800d578000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d578000-0xffffff800d57a000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d57a000-0xffffff800d57c000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d57c000-0xffffff800d57e000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d57e000-0xffffff800d580000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d580000-0xffffff800d5c1000  266240 of_iomap+0x48/0x68 phys=545c0000 ioremap
+0xffffff800d5c1000-0xffffff800d5c5000   16384 n_tty_open+0x20/0xb8 pages=3 vmalloc
+0xffffff800d5c5000-0xffffff800d5e6000  135168 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800d5e6000-0xffffff800d5f7000   69632 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800d5f7000-0xffffff800d5f9000    8192 SyS_swapon+0x858/0xe60 pages=1 vmalloc
+0xffffff800d5fa000-0xffffff800d5fc000    8192 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800d5fc000-0xffffff800d5fe000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d5fe000-0xffffff800d600000    8192 SyS_swapon+0x858/0xe60 pages=1 vmalloc
+0xffffff800d600000-0xffffff800d641000  266240 of_iomap+0x48/0x68 phys=54540000 ioremap
+0xffffff800d641000-0xffffff800d654000   77824 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800d654000-0xffffff800d675000  135168 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800d675000-0xffffff800d679000   16384 n_tty_open+0x20/0xb8 pages=3 vmalloc
+0xffffff800d679000-0xffffff800d67b000    8192 tegra_uart_dma_channel_allocate+0x20c/0x2b8 user
+0xffffff800d67b000-0xffffff800d67d000    8192 SyS_swapon+0x858/0xe60 pages=1 vmalloc
+0xffffff800d67d000-0xffffff800d67f000    8192 swap_cgroup_swapon+0x50/0x188 pages=1 vmalloc
+0xffffff800d680000-0xffffff800d6c1000  266240 devm_ioremap+0x58/0xb0 phys=54600000 ioremap
+0xffffff800d6c1000-0xffffff800d6e2000  135168 __nvgpu_vzalloc+0x28/0x78 [nvgpu] pages=32 vmalloc
+0xffffff800d6e2000-0xffffff800d6f5000   77824 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800d6f5000-0xffffff800d6f7000    8192 swap_cgroup_swapon+0x50/0x188 pages=1 vmalloc
+0xffffff800d6f7000-0xffffff800d6f9000    8192 swap_cgroup_swapon+0x50/0x188 pages=1 vmalloc
+0xffffff800d6f9000-0xffffff800d6fb000    8192 swap_cgroup_swapon+0x50/0x188 pages=1 vmalloc
+0xffffff800d6fb000-0xffffff800d6fd000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800d6fd000-0xffffff800d6ff000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800d700000-0xffffff800d741000  266240 devm_ioremap+0x58/0xb0 phys=54680000 ioremap
+0xffffff800d741000-0xffffff800d762000  135168 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800d762000-0xffffff800d775000   77824 __nvgpu_vzalloc+0x28/0x78 [nvgpu] pages=18 vmalloc
+0xffffff800d775000-0xffffff800d778000   12288 layout_and_allocate+0x924/0xde8 pages=2 vmalloc
+0xffffff800d778000-0xffffff800d77a000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800d77a000-0xffffff800d77c000    8192 bpf_prog_alloc+0x48/0xb8 pages=1 vmalloc
+0xffffff800d77d000-0xffffff800d77f000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800d780000-0xffffff800d7c1000  266240 devm_ioremap+0x58/0xb0 phys=54080000 ioremap
+0xffffff800d7c1000-0xffffff800d883000  794624 __nvgpu_vzalloc+0x28/0x78 [nvgpu] pages=193 vmalloc
+0xffffff800d883000-0xffffff800d919000  614400 __nvgpu_vzalloc+0x28/0x78 [nvgpu] pages=149 vmalloc
+0xffffff800d919000-0xffffff800d99a000  528384 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800d99a000-0xffffff800da1b000  528384 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800da1b000-0xffffff800da5c000  266240 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800da5c000-0xffffff800da9d000  266240 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800da9d000-0xffffff800df0e000 4657152 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user vpages
+0xffffff800df0e000-0xffffff800df57000  299008 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800df57000-0xffffff800dfd8000  528384 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800dfd8000-0xffffff800dfeb000   77824 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800dfeb000-0xffffff800dffc000   69632 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800dffc000-0xffffff800dffe000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800dffe000-0xffffff800e000000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800e000000-0xffffff800f001000 16781312 devm_ioremap+0x58/0xb0 phys=57000000 ioremap
+0xffffff800f001000-0xffffff800f014000   77824 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800f014000-0xffffff800f025000   69632 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800f025000-0xffffff800f038000   77824 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800f038000-0xffffff800f228000 2031616 zcomp_create+0x1168/0x2ea8 [zram] pages=495 vmalloc
+0xffffff800f228000-0xffffff800f248000  131072 SyS_swapon+0x698/0xe60 pages=31 vmalloc
+0xffffff800f248000-0xffffff800f438000 2031616 zcomp_create+0x1168/0x2ea8 [zram] pages=495 vmalloc
+0xffffff800f438000-0xffffff800f458000  131072 SyS_swapon+0x698/0xe60 pages=31 vmalloc
+0xffffff800f458000-0xffffff800f648000 2031616 zcomp_create+0x1168/0x2ea8 [zram] pages=495 vmalloc
+0xffffff800f648000-0xffffff800f668000  131072 SyS_swapon+0x698/0xe60 pages=31 vmalloc
+0xffffff800f668000-0xffffff800f858000 2031616 zcomp_create+0x1168/0x2ea8 [zram] pages=495 vmalloc
+0xffffff800f858000-0xffffff800f878000  131072 SyS_swapon+0x698/0xe60 pages=31 vmalloc
+0xffffff800f878000-0xffffff800f87a000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800f87a000-0xffffff800f87c000    8192 dma_pool_alloc+0x1f8/0x238 user
+0xffffff800f87c000-0xffffff800f883000   28672 _rtw_zvmalloc+0x18/0x3c [rtl8821cu] pages=6 vmalloc
+0xffffff800f883000-0xffffff800f896000   77824 _rtw_zvmalloc+0x18/0x3c [rtl8821cu] pages=18 vmalloc
+0xffffff800f896000-0xffffff800f8d3000  249856 _rtw_zvmalloc+0x18/0x3c [rtl8821cu] pages=60 vmalloc
+0xffffff800f8d3000-0xffffff800f8e4000   69632 _rtw_zvmalloc+0x18/0x3c [rtl8821cu] pages=16 vmalloc
+0xffffff800f8e4000-0xffffff800f8e6000    8192 _rtw_zvmalloc+0x18/0x3c [rtl8821cu] pages=1 vmalloc
+0xffffff800f8e6000-0xffffff800f8e9000   12288 _rtw_zvmalloc+0x18/0x3c [rtl8821cu] pages=2 vmalloc
+0xffffff800f8e9000-0xffffff800f8ec000   12288 _rtw_zvmalloc+0x18/0x3c [rtl8821cu] pages=2 vmalloc
+0xffffff800f8ec000-0xffffff800f8fd000   69632 _rtw_zvmalloc+0x18/0x3c [rtl8821cu] pages=16 vmalloc
+0xffffff800f8fd000-0xffffff800f926000  167936 _rtw_zvmalloc+0x18/0x3c [rtl8821cu] pages=40 vmalloc
+0xffffff800f926000-0xffffff800f92d000   28672 _rtw_zvmalloc+0x18/0x3c [rtl8821cu] pages=6 vmalloc
+0xffffff800f92d000-0xffffff800f96a000  249856 _rtw_zvmalloc+0x18/0x3c [rtl8821cu] pages=60 vmalloc
+0xffffff800f96a000-0xffffff800f97b000   69632 _rtw_zvmalloc+0x18/0x3c [rtl8821cu] pages=16 vmalloc
+0xffffff800f97b000-0xffffff800f97d000    8192 _rtw_zvmalloc+0x18/0x3c [rtl8821cu] pages=1 vmalloc
+0xffffff800f97d000-0xffffff800f980000   12288 _rtw_zvmalloc+0x18/0x3c [rtl8821cu] pages=2 vmalloc
+0xffffff800f980000-0xffffff800f983000   12288 _rtw_zvmalloc+0x18/0x3c [rtl8821cu] pages=2 vmalloc
+0xffffff800f983000-0xffffff800f994000   69632 _rtw_zvmalloc+0x18/0x3c [rtl8821cu] pages=16 vmalloc
+0xffffff800f994000-0xffffff800f9bd000  167936 _rtw_zvmalloc+0x18/0x3c [rtl8821cu] pages=40 vmalloc
+0xffffff800f9bd000-0xffffff800f9c1000   16384 n_tty_open+0x20/0xb8 pages=3 vmalloc
+0xffffff800f9c3000-0xffffff800f9c9000   24576 nvhost_flcn_init_sw+0x20c/0x458 user
+0xffffff800f9c9000-0xffffff800f9d2000   36864 nvgpu_dma_alloc_flags_sys+0x110/0x380 [nvgpu] user
+0xffffff800f9d2000-0xffffff800f9d6000   16384 n_tty_open+0x20/0xb8 pages=3 vmalloc
+0xffffff800f9d6000-0xffffff800f9da000   16384 n_tty_open+0x20/0xb8 pages=3 vmalloc
+0xffffff8010000000-0xffffff8011001000 16781312 devm_ioremap+0x58/0xb0 phys=58000000 ioremap
+0xffffffbebff28000-0xffffffbebff8c000  409600 pcpu_get_vm_areas+0x0/0x590 vmalloc
+0xffffffbebff8c000-0xffffffbebfff0000  409600 pcpu_get_vm_areas+0x0/0x590 vmalloc

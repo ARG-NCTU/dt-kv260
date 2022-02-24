@@ -1,0 +1,35 @@
+{
+    "base_disk_location": "disk_image/dt-nvidia-jetpack-v1.2.2-4gb.zip",
+    "base_disk_name": "dt-nvidia-jetpack-v1.2.2-4gb",
+    "base_disk_version": "1.2.2",
+    "environment": {
+        "commands_version": "daffy",
+        "hostname": "ezra-X550VX",
+        "init_sd_card_version": "2.1.0",
+        "shell_version": "5.2.19",
+        "user": "ezra"
+    },
+    "parameters": {
+        "country": "US",
+        "device": "/dev/sde",
+        "experimental": false,
+        "hostname": "arg",
+        "no_cache": false,
+        "no_steps": "",
+        "robot_configuration": "DB21J",
+        "robot_type": "duckiebot",
+        "size": null,
+        "steps": "license,download,flash,verify,setup",
+        "wifi": "EE622:***",
+        "workdir": "/tmp/duckietown/dts/init_sd_card"
+    },
+    "stamp": 1642741306.5938537,
+    "stamp_human": "2022-01-21T13:01:46.593864",
+    "steps": {
+        "download": true,
+        "flash": true,
+        "license": true,
+        "setup": true,
+        "verify": true
+    }
+}
