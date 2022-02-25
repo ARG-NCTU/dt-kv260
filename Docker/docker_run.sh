@@ -57,5 +57,5 @@ docker run \
     --privileged \
     --security-opt seccomp=unconfined \
     $DOCKER_OPTS \
-    argnctu/dt-kv260:ros2-dashing \
+    argnctu/dt-ros2-commons:arm64 \
     $BASH_OPTION

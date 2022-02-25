@@ -1,10 +1,10 @@
-FROM arm64v8/ubuntu:18.04
+FROM arm64v8/ubuntu:20.04
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
-ENV ROS_DISTRO melodic
-ENV ROS2_DISTRO dashing
+ENV ROS_DISTRO noetic
+ENV ROS2_DISTRO foxy
 
 ###################################### user #####################################
 
@@ -43,6 +43,7 @@ RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -yq dist-upgrade \
     dirmngr \
     gnupg2 \
     mercurial \
+    iputils-ping \
     libcanberra-gtk-module \
     libcanberra-gtk3-module \
     libpcap-dev \
