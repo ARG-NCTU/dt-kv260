@@ -19,12 +19,30 @@ https://docs.duckietown.org/daffy/opmanual_duckiebot/out/laptop_setup.html
 
 https://docs.duckietown.org/daffy/opmanual_duckiebot/out/setup_duckiebot.html
 
+## docker
+
+Open the Portainer interface and check the running containers. You should see one called duckiebot-interface, using image duckietown/dt-duckiebot-interface:daffy-arm32v7.
+
+You call also determine this by running:
+
+$ docker -H DUCKIEBOT_NAME.local ps
+
+To manually start the duckiebot-interface, do:
+
+$ docker -H DUCKIEBOT_NAME.local run --name duckiebot-interface -v /data:/data --privileged --network=host -dit --restart unless-stopped duckietown/dt-duckiebot-interface:daffy-arm32v7
+
 ## Fleet
 
 Discovers Duckietown robots in the local network. [code](https://github.com/ARG-NCTU/duckietown-shell-commands/blob/daffy/fleet/discover/command.py)
 ```
 dts fleet discover
 ```
+## Turn off the Duckiebot
+
+$ dts duckiebot reboot hostname
+
+$ dts duckiebot shutdown hostname
+
 
 ## Open a terminal
 
