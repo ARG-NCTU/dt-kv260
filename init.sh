@@ -62,20 +62,20 @@ run_on_first_boot() {
 
     # setup ssh access
     echo "Setting up ssh..."
-    mkdir -p /home/louis/.ssh
-    touch /home/louis/.ssh/authorized_keys
-    echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFiaiFeU0Pc3ZjiGbjJOIx28ghcWPoem8jU1OSeJnbTkKT79vrzjIbYjkBg7uBlXb6kLnbHLWHUnPlLk2IUQTxHHvakubEJkJxePdN6XO+q1sKpEvz+1GL60iBKhRljCZ9h/CcJ78kkyNQkexHT15ZDMhOnUd8c9zxwUHxSjzPSOH5ns8bxjU3oSjmzDEojPnQJmY6Evhf5DVcKXenxkzs4XgDEo+ldKo37i30iUoFCL30OsXCP2tPcn1j39qjL7vnaUBO9WqY8eOssOHAX7/K1dNN1lDvNCKspq/2f05Ss8LopSpe6hOiMnPB0RlotJbZn+784kV1B4nJpqLj+EQr DT2018key" | tee -a /home/louis/.ssh/authorized_keys
-    chmod 755 /home/louis
-    chmod 700 /home/louis/.ssh
-    chmod 600 /home/louis/.ssh/authorized_keys
-    chown -R louis:louis /home/louis
+    mkdir -p /home/${USER}/.ssh
+    touch /home/${USER}/.ssh/authorized_keys
+    echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFiaiFeU0Pc3ZjiGbjJOIx28ghcWPoem8jU1OSeJnbTkKT79vrzjIbYjkBg7uBlXb6kLnbHLWHUnPlLk2IUQTxHHvakubEJkJxePdN6XO+q1sKpEvz+1GL60iBKhRljCZ9h/CcJ78kkyNQkexHT15ZDMhOnUd8c9zxwUHxSjzPSOH5ns8bxjU3oSjmzDEojPnQJmY6Evhf5DVcKXenxkzs4XgDEo+ldKo37i30iUoFCL30OsXCP2tPcn1j39qjL7vnaUBO9WqY8eOssOHAX7/K1dNN1lDvNCKspq/2f05Ss8LopSpe6hOiMnPB0RlotJbZn+784kV1B4nJpqLj+EQr DT2018key" | tee -a /home/${USER}/.ssh/authorized_keys
+    chmod 755 /home/${USER}
+    chmod 700 /home/${USER}/.ssh
+    chmod 600 /home/${USER}/.ssh/authorized_keys
+    chown -R ${USER}:${USER} /home/${USER}
 
-    # add user `louis` to the `root` group
-    adduser louis root
+    # add user `${USER}` to the `root` group
+    adduser ${USER} root
 
     # setup docker
     echo "Adding the user to the docker group..."
-    adduser louis docker
+    adduser ${USER} docker
 
     # store the MAC addresses for future reference
     echo "Storing debug information..."
