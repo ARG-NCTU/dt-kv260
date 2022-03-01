@@ -31,6 +31,7 @@ docker stop DOCKER_CONTAINER_ID
 docker rm DOCKER_CONTAINER_ID
 ```
 open all docker using docker compose in https://github.com/ARG-NCTU/dt-kv260/blob/main/installation/bin/dt-autoboot
+(docker composer is a command to run multiple docker containers)
 ```
 source /usr/local/bin/dt-autoboot
 ```
