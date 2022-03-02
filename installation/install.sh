@@ -64,7 +64,7 @@ docker pull duckietown/dt-system-monitor:daffy-arm64v8
 
 # dt-device-dashboard 
 echo -e "\e[93m Download dt-device-dashboard  docker image \e[0m"
-docker pull duckietown/dt-device-dashboard:daffy-arm64v8
+docker pull argnctu/dt-device-dashboard:daffy-arm64v8
 
 ###################################### Setup crucial files #####################################
 
