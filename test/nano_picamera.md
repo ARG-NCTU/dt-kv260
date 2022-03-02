@@ -20,3 +20,6 @@ cv2.imwrite("Picture.png", image)
 
 # 刪除webcam，避免影像佔用資源
 del(webcam)
+
+# Try this if the way above don't work
+https://www.jetsonhacks.com/2019/04/02/jetson-nano-raspberry-pi-camera/
