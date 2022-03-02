@@ -13,7 +13,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
 
   dashboard:
-    image: duckietown/dt-device-dashboard:daffy-${ARCH:-arm64v8}
+    image: argnctu/dt-device-dashboard:daffy-${ARCH:-arm64v8}
     container_name: dashboard
     restart: unless-stopped
     network_mode: host
