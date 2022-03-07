@@ -19,6 +19,24 @@ sudo reboot
 
 please follow the naming rule in https://github.com/ARG-NCTU/dt-kv260#readme
 
+## dockers reboot
+
+check all running docker containers
+```
+docker ps -a
+```
+stop and kill all docker containers
+```
+docker stop DOCKER_CONTAINER_ID
+docker rm DOCKER_CONTAINER_ID
+```
+open all docker using docker compose in https://github.com/ARG-NCTU/dt-kv260/blob/main/installation/bin/dt-autoboot
+(docker composer is a command to run multiple docker containers)
+```
+source /usr/local/bin/dt-autoboot
+```
+
+
 ## wifi
 
 make sure our bot and top are in the same network, for ARG lab we use EE622 network, you can plus it when initialing SD card using dts
