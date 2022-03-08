@@ -35,7 +35,11 @@ open all docker using docker compose in https://github.com/ARG-NCTU/dt-kv260/blo
 ```
 source /usr/local/bin/dt-autoboot
 ```
+## dockers migrate
 
+1. To move docker images with USB(for some hardware we can't do docker push)
+https://ithelp.ithome.com.tw/articles/10191387
+2. Docker push and pull, need to do docker login first, and we can check if it success on docker nub
 
 ## wifi
 
