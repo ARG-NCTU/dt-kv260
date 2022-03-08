@@ -43,11 +43,29 @@ https://ithelp.ithome.com.tw/articles/10191387
 
 ## wifi
 
-make sure our bot and top are in the same network, for ARG lab we use EE622 network, you can plus it when initialing SD card using dts
+make sure our bot and top are in the same network, for ARG lab we use EE622 network, you can plus it when initialing SD card using dts, for rpi3B+ using DB19, we need to install wifi driver manually, please follow below steps.
 
-## camera
-
-https://www.rs-online.com/designspark/jetson-nano-opencv-cn
+Install git dkms
+```
+ $ sudo apt-get update
+ $ sudo apt-get install git dkms
+```
+Clone a repo for wifi
+```
+ $ sudo git clone "https://github.com/RinCat/RTL88x2BU-Linux-Driver.git" /usr/src/rtl88x2bu-git
+ $ sudo sed -i 's/PACKAGE_VERSION="@PKGVER@"/PACKAGE_VERSION="git"/g' /usr/src/rtl88x2bu-git/dkms.conf
+```
+Install dongle drive
+```
+ $ sudo dkms add -m rtl88x2bu -v git
+ $ sudo dkms autoinstall
+```
+Install network tool
+```
+ $ sudo apt get network-manager
+ $ sudo service dhcpcd stop
+ $ sudo service network-manager restart
+```
 
 ## avahi
 
