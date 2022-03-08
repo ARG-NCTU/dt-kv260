@@ -68,13 +68,13 @@ docker pull argnctu/dt-device-dashboard:daffy-arm64v8
 
 ###################################### Setup crucial files #####################################
 
-# copy services files to /etc/avahi/services
-sudo cp services/* /etc/avahi/services
-echo -e "\e[93m Copy services files to /etc/avahi/services done \e[0m"
+# copy services files to /etc/avahi/services/
+sudo cp services/* /etc/avahi/services/
+echo -e "\e[93m Copy services files to /etc/avahi/services/ done \e[0m"
 
-# copy bin files to /
-sudo cp bin/* /usr/local/bin
-echo -e "\e[93m Copy bin files to /usr/local/bin done \e[0m"
+# copy bin files to /usr/local/bin/
+sudo cp bin/* /usr/local/bin/
+echo -e "\e[93m Copy bin files to /usr/local/bin/ done \e[0m"
 
 # copy data/ to /
 sudo cp -r data/ /
