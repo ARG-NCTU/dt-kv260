@@ -1,3 +1,15 @@
+# How to make Nano-duckiebot see
+https://www.jetsonhacks.com/2019/04/02/jetson-nano-raspberry-pi-camera/
+
+### camera with cv
+https://www.rs-online.com/designspark/jetson-nano-opencv-cn
+
+# How to make KV260-duckiebot see
+https://github.com/Xilinx/Kria-PYNQ/blob/main/kv260/base/notebooks/video/mipi_to_displayport.ipynb
+
+### web camera
+https://github.com/Xilinx/Kria-PYNQ/blob/main/kv260/base/notebooks/video/opencv_face_detect_webcam.ipynb
+
 # How to make Rpi-duckiebot see
 
 ### Go to settings and enable camera function.
