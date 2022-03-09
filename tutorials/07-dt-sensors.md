@@ -11,6 +11,7 @@ https://github.com/Xilinx/Kria-PYNQ/blob/main/kv260/base/notebooks/video/mipi_to
 https://github.com/Xilinx/Kria-PYNQ/blob/main/kv260/base/notebooks/video/opencv_face_detect_webcam.ipynb
 
 # How to make Rpi-duckiebot see
+https://raspberrypi.stackexchange.com/questions/14229/how-can-i-enable-the-camera-without-using-raspi-config
 
 ### Go to settings and enable camera function.
 ```
