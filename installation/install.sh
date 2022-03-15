@@ -68,26 +68,22 @@ docker pull argnctu/dt-device-dashboard:daffy-arm64v8
 
 ###################################### Setup crucial files #####################################
 
-cd ~/dt-kv260/installation
-
 # copy services files to /etc/avahi/services/
-sudo cp ./services/* /etc/avahi/services/
+sudo cp services/* /etc/avahi/services/
 echo -e "\e[93m Copy services files to /etc/avahi/services/ done \e[0m"
 
 # copy bin files to /usr/local/bin/
-sudo cp ./bin/* /usr/local/bin/
+sudo cp bin/* /usr/local/bin/
 echo -e "\e[93m Copy bin files to /usr/local/bin/ done \e[0m"
 
 # copy data/ to /
-sudo cp -r ./data/ /
+sudo cp -r data/ /
 echo -e "\e[93m Copy installation/data to / done \e[0m"
 
 # copy triggers/ to /
-sudo cp -r ./triggers/ /
+sudo cp -r triggers/ /
 echo -e "\e[93m Copy installation/triggers to / done \e[0m"
 
 # copy secrets/ to /
-sudo cp -r ./secrets/ /
+sudo cp -r secrets/ /
 echo -e "\e[93m Copy installation/secrets to / done \e[0m"
-
-cd ..
