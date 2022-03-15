@@ -68,7 +68,7 @@ docker pull argnctu/dt-device-dashboard:daffy-arm64v8
 
 ###################################### Setup crucial files #####################################
 
-cd ~/dt-kv260/installation
+cd /home/${USER}/dt-kv260/installation
 
 # copy services files to /etc/avahi/services/
 sudo cp ./services/* /etc/avahi/services/
