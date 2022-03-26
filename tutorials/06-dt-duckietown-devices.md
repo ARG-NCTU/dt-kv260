@@ -43,6 +43,8 @@ https://ithelp.ithome.com.tw/articles/10191387
 
 ## wifi
 
+To add a new wifi https://docs.duckietown.org/daffy/opmanual_duckiebot/out/duckiebot_network.html
+
 make sure our bot and top are in the same network, for ARG lab we use EE622 network, you can plus it when initialing SD card using dts, for rpi3B+ using DB19, we need to install wifi driver manually, please follow below steps.
 
 Install git dkms

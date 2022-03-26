@@ -40,8 +40,13 @@ Ex: dt-nano-bot-01, dt-rpi-boat-03, dt-kv260-anchor-07
 
 | Labels  | KV/JNano/RPi | SD Card Label   | Status      | Who is using    |
 | --------| -------- | --------------  | --------------  | --------------- |
-| 01      | RPi3     | dt-rpi-bot-01   | Assembled       | Bory      |
-| 02      | ----     | ----            | Brand New       | Tippy     |
-| 03      | JNano    | dt-nano-bot-03  | Assembled       | Ezra      |
-| 04      | KV260    | dt-kv280-bot-04 | HW Upgrading    | Nick      |
-| 05      | ----     | ----            | Brand New       | Julie     |
+| 01      | JNano    | dtnanobot01     | Assembled       | Ezra      |
+| 02      | Rpi3B+   | dtrpibot01      | Assembled       | Bory      |
+| 03      | kv260    | dtkv260bot04    | Assembled       | Ezra      |
+| 04      | JNano    | dtnanobot04     | Assembled       | Welly     |
+| 05      | JNano    | dtnanobot05     | Assembled       | Julie     |
+| 06      | JNano    | dtnanobot06     | Assembled       | Tippy     |
+| 07      | JNano    | dtnanobot07     | Assembled       | Jessie    |
+| 08      | ----     | ----            | Brand New       |           |
+| 09      | ----     | ----            | Brand New       |           |
+| 10      | ----     | ----            | Brand New       |           |
