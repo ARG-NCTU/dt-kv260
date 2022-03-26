@@ -176,7 +176,7 @@ run_on_every_boot() {
     # fi
 
     # launch triggers handlers
-    dt-serve-triggers
+    # dt-serve-triggers
 
     # mark event
     store_event "boot"
