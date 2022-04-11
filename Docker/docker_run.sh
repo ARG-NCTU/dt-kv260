@@ -45,17 +45,17 @@ docker run \
     -e ROS_MASTER_URI=$ROS_MASTER_URI \
     -e ROS_IP=$ROS_IP \
     -v "$XAUTH:$XAUTH" \
-    -v "/home/$USER/ros1-ros2-demo:/home/argnctu/ros1-ros2-demo" \
+    -v "/home/$USER/dt-kv260:/home/argnctu/dt-kv260" \
     -v "/tmp/.X11-unix:/tmp/.X11-unix" \
     -v "/etc/localtime:/etc/localtime:ro" \
     -v "/dev:/dev" \
     -v "/var/run/docker.sock:/var/run/docker.sock" \
-    --workdir "/home/argnctu/ros1-ros2-demo" \
+    --workdir "/home/argnctu/dt-kv260" \
     --user root \
     --name argnctu \
     --network host \
     --privileged \
     --security-opt seccomp=unconfined \
     $DOCKER_OPTS \
-    argnctu/dt-ros2-commons:arm64 \
+    argnctu/dt-kv260:latest \
     $BASH_OPTION
