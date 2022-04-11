@@ -48,7 +48,6 @@ RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -yq dist-upgrade \
     libcanberra-gtk3-module \
     libpcap-dev \
     libpython3-dev \
-    python-gtk2 \
     python-gobject \
     python-tk \
     python3-pip \
@@ -68,10 +67,11 @@ RUN apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E
 # install bootstrap tools
 RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -o Acquire::ForceIPv4=true install --no-install-recommends -y \
     ros-$ROS_DISTRO-desktop-full \
-    python-rosdep \
-    python-rosinstall \
-    python-rosinstall-generator \
-    python-wstool \
+    ros-$ROS_DISTRO-ddynamic-reconfigure \
+    python3-rosdep \
+    python3-rosinstall \
+    python3-rosinstall-generator \
+    python3-wstool \
     && rm -rf /var/lib/apt/lists/*
 
 ###################################### ROS2 #####################################
