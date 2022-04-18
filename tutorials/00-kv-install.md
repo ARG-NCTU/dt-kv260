@@ -24,13 +24,6 @@ $ sudo apt-get install net-tools
 $ sudo apt-get install openssh-server
 ```
 
-### VNC
-
-```
-$ sudo apt-get update
-$ sudo apt-get install vino
-```
-
 ### Docker
 ```
 $ sudo apt-get update
@@ -41,13 +34,13 @@ $ echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 $ sudo apt-get update
 $ sudo apt-get install docker-ce docker-ce-cli containerd.io
-```
-
-TODO 
+``` 
 
 ## PYNQ
 
 See the detail in the announcement: [Link](https://discuss.pynq.io/t/pynq-now-available-for-the-kria-kv260-vision-ai-starter-kit/3579)
+
+Install pynq from the [Kria-PYNQ](https://github.com/Xilinx/Kria-PYNQ) repository.
 
 Run the Jupyter (password: xilinx)
 
