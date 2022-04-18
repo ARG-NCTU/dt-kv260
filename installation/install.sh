@@ -1,22 +1,25 @@
 #! /bin/bash
 
+# Please use the following command to run the script.
+#   sudo bash install.sh
+
 #################################### Network Tools #######################################
 
-sudo apt-get update
+apt-get update
 
-sudo apt-get install \
-     net-tools \
-     openssh-server
+apt-get install \
+        net-tools \
+        openssh-server
 
 #################################### Install docker ######################################
 
-sudo apt-get update
+apt-get update
 
-sudo apt-get install \
-     ca-certificates \
-     curl \
-     gnupg \
-     lsb-release
+apt-get install \
+        ca-certificates \
+        curl \
+        gnupg \
+        lsb-release
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
@@ -24,12 +27,12 @@ echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-sudo apt-get update
+apt-get update
 
-sudo apt-get install \
-     docker-ce \
-     docker-ce-cli \
-     containerd.io
+apt-get install \
+        docker-ce \
+        docker-ce-cli \
+        containerd.io
 
 ######################### Pull docker images from duckietown #############################
 
@@ -100,21 +103,21 @@ docker pull argnctu/dt-device-dashboard:daffy-arm64v8
 ###################################### Setup crucial files #####################################
 
 # copy services files to /etc/avahi/services/
-sudo cp services/* /etc/avahi/services/
+cp services/* /etc/avahi/services/
 echo -e "\e[93m Copy services files to /etc/avahi/services/ done \e[0m"
 
 # copy bin files to /usr/local/bin/
-sudo cp bin/* /usr/local/bin/
+cp bin/* /usr/local/bin/
 echo -e "\e[93m Copy bin files to /usr/local/bin/ done \e[0m"
 
 # copy data/ to /
-sudo cp -r data/ /
+cp -r data/ /
 echo -e "\e[93m Copy installation/data to / done \e[0m"
 
 # copy triggers/ to /
-sudo cp -r triggers/ /
+cp -r triggers/ /
 echo -e "\e[93m Copy installation/triggers to / done \e[0m"
 
 # copy secrets/ to /
-sudo cp -r secrets/ /
+cp -r secrets/ /
 echo -e "\e[93m Copy installation/secrets to / done \e[0m"
