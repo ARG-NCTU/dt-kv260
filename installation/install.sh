@@ -1,6 +1,37 @@
 #! /bin/bash
 
-###################################### Docker images #####################################
+#################################### Network Tools #######################################
+
+sudo apt-get update
+
+sudo apt-get install \
+     net-tools \
+     openssh-server
+
+#################################### Install docker ######################################
+
+sudo apt-get update
+
+sudo apt-get install \
+     ca-certificates \
+     curl \
+     gnupg \
+     lsb-release
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt-get update
+
+sudo apt-get install \
+     docker-ce \
+     docker-ce-cli \
+     containerd.io
+
+######################### Pull docker images from duckietown #############################
 
 # portainer
 echo -e "\e[93m Download portainer docker image \e[0m"
