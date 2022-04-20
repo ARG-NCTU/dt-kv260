@@ -48,6 +48,10 @@ RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -yq dist-upgrade \
     libcanberra-gtk3-module \
     libpcap-dev \
     libpython3-dev \
+    libhidapi-dev \
+    libopencv-dev \
+    libopencv-viz-dev \
+    libhidapi-libusb0 \
     python-gobject \
     python-tk \
     python3-pip \
