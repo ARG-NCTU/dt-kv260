@@ -17,7 +17,7 @@ Ex: dt-nano-bot-01, dt-rpi-boat-03, dt-kv260-anchor-07
 | --------------- | --------------  | --------------  | --------------- |
 | dt-kv260-bot-01 | 192.168.50.171  | Unavailable     | Nick            |
 | 02              | ----            | Unavailable     | Prof. Lai's lab |
-| 03              | ----            | Broken          |                 |
+| 03              | ----            | Unavailable     | Defense         |
 | dt-kv260-bot-04 | 192.168.50.95   | Unavailable     | Ezra            |
 | dt-kv260-bot-05 | 192.168.50.124  | Unavailable     | Louis           |
 | dt-kv260-bot-06 | 192.168.50.51   | Unavailable     | MF              |
@@ -29,9 +29,9 @@ Ex: dt-nano-bot-01, dt-rpi-boat-03, dt-kv260-anchor-07
 | dt-kv260-bot-12 | 192.168.50.102  | Unavailable     | Rick            |
 | 13              | ----            | Unavailable     | Austin          |
 | 14              | ----            | Unavailable     | Prof. Lai's lab |
-| 15              | ----            | Available       | ----            |
-| 16              | ----            | Available       | ----            |
-| 17              | ----            | Available       | ----            |
+| 15              | ----            | Unavailable     | Defense         |
+| 16              | ----            | Unavailable     | Defense         |
+| 17              | ----            | Unavailable     | Defense         |
 | 18              | ----            | Unavailable     | senior Lu       |
 | 19              | ----            | Unavailable     | Jacopo          |
 | 20              | ----            | Unavailable     | Jacopo          |

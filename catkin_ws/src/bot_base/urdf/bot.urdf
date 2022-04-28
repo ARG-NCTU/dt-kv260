@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<robot name="bot">
+  <link name="base_link" />
+  <link name="zed_mini" />
+  <joint name="zed_mini" type="continuous">
+    <axis xyz="0 0 1"/>
+    <parent link="base_link"/>
+    <child link="zed_mini"/>
+    <origin rpy="0 0.3488888888888889 0" xyz="0.075 0.025 0.15"/>
+    <limit effort="100" velocity="100"/>
+    <joint_properties damping="0.0" friction="0.0"/>
+  </joint>
+</robot>

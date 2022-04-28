@@ -48,7 +48,10 @@ RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -yq dist-upgrade \
     libcanberra-gtk3-module \
     libpcap-dev \
     libpython3-dev \
-    python-gtk2 \
+    libhidapi-dev \
+    libopencv-dev \
+    libopencv-viz-dev \
+    libhidapi-libusb0 \
     python-gobject \
     python-tk \
     python3-pip \
@@ -68,10 +71,11 @@ RUN apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E
 # install bootstrap tools
 RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -o Acquire::ForceIPv4=true install --no-install-recommends -y \
     ros-$ROS_DISTRO-desktop-full \
-    python-rosdep \
-    python-rosinstall \
-    python-rosinstall-generator \
-    python-wstool \
+    ros-$ROS_DISTRO-ddynamic-reconfigure \
+    python3-rosdep \
+    python3-rosinstall \
+    python3-rosinstall-generator \
+    python3-wstool \
     && rm -rf /var/lib/apt/lists/*
 
 ###################################### ROS2 #####################################
@@ -87,6 +91,30 @@ RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -o Acquire::ForceIPv4=t
 
 RUN rosdep init \
     && rosdep update
+
+######################################## realsense ########################################
+
+RUN apt-get update && apt-get install -y \
+    libsuitesparse-dev\
+    software-properties-common \
+    libusb-1.0-0-dev \
+    libx11-dev \
+    xorg-dev \
+    libgl1-mesa-dev \
+    libglu1-mesa-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# set the version of the realsense library
+ENV LIBREALSENSE_VERSION 2.36.0
+RUN wget https://github.com/IntelRealSense/librealsense/archive/v${LIBREALSENSE_VERSION}.tar.gz && \
+    tar -xvzf v${LIBREALSENSE_VERSION}.tar.gz && \
+    rm v${LIBREALSENSE_VERSION}.tar.gz && \
+    mkdir -p librealsense-${LIBREALSENSE_VERSION}/build && \
+    cd librealsense-${LIBREALSENSE_VERSION}/build && \
+    cmake .. && \
+    make && \
+    make install && \
+    rm -rf librealsense-${LIBREALSENSE_VERSION}
 
 ##################################### PIP ######################################
 
