@@ -19,7 +19,7 @@ ENV HOME=/home/${USER}
 RUN adduser --disabled-password \
     --gecos "Default user" \
     --uid ${UID} \
-    ${USER} 
+    ${USER}
 
 RUN echo "root:root" | chpasswd
 RUN echo "${USER}:111111" | chpasswd
@@ -72,6 +72,10 @@ RUN apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E
 RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -o Acquire::ForceIPv4=true install --no-install-recommends -y \
     ros-$ROS_DISTRO-desktop-full \
     ros-$ROS_DISTRO-ddynamic-reconfigure \
+    ros-$ROS_DISTRO-tf2* \
+    ros-$ROS_DISTRO-teleop-twist-joy* \
+    ros-$ROS_DISTRO-rosserial \
+    ros-$ROS_DISTRO-rosserial-arduino \
     python3-rosdep \
     python3-rosinstall \
     python3-rosinstall-generator \
