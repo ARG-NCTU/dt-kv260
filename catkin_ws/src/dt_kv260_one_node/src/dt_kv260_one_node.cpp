@@ -134,6 +134,38 @@ void DT_kv260_Node::pub_ros_topics(){
 void DT_kv260_Node::obstacle_avoidance(){
   ;
   // TODO
+  min_range=laser_output->ranges[0];
+	min_range_angle=0;
+	for(int j=0;j<=241;j++) //increment by one degree
+		{
+		  	if(laser_output->ranges[j]<min_range && laser_output->ranges[j]!=0)
+			{
+				min_range=laser_output->ranges[j];
+				min_range_angle=j/2;
+      }
+		}
+		printf("minimum range is [%f] at an angle of [%f]\n",min_range,min_range_angle);
+	if(min_range<=0.5)  // min_range<=0.5 gave box pushing like behaviour, min_range<=1.2 gave obstacle avoidance
+	{
+		if(min_range_angle<90)
+		{
+			 cmdvel.angular.z=0.25;
+			 cmdvel.linear.x=0;
+			 printf("left\n");
+		}
+		else
+		{
+			 cmdvel.angular.z=-0.25;
+			 cmdvel.linear.x=0;
+			 printf("right\n");
+		}
+	}
+	else
+	{
+		cmdvel.linear.x=0.4;
+		cmdvel.angular.z=0;
+		printf("straight\n");
+	}
 }
 
 
