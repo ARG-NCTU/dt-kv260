@@ -1,6 +1,13 @@
 #include "dt_kv260_one_node.h"
 
-void DT_kv260_Node::image_process(const sl_oc::video::Frame frame){
+cv::Mat DT_kv260_Node::stereo_matching(const sl_oc::video::Frame frame,
+                                        sl_oc::tools::StereoSgbmPar stereoPar,
+                                        cv::Ptr<cv::StereoSGBM> left_matcher,
+                                        cv::Mat map_left_x,
+                                        cv::Mat map_left_y,
+                                        cv::Mat map_right_x,
+                                        cv::Mat map_right_y){
+  cv::Mat frameYUV, frameBGR, left_raw, left_rect, right_raw, right_rect, left_for_matcher, right_for_matcher, left_disp_half,left_disp,left_disp_float, left_disp_vis;
   // ----> Conversion from YUV 4:2:2 to BGR for visualization
   frameYUV = cv::Mat( frame.height, frame.width, CV_8UC2, frame.data );
   cv::cvtColor(frameYUV,frameBGR,cv::COLOR_YUV2BGR_YUYV);
@@ -12,180 +19,136 @@ void DT_kv260_Node::image_process(const sl_oc::video::Frame frame){
 
 
   // ----> Apply rectification
-  sl_oc::tools::StopWatch remap_clock;
   cv::remap(left_raw, left_rect, map_left_x, map_left_y, cv::INTER_AREA );
   cv::remap(right_raw, right_rect, map_right_x, map_right_y, cv::INTER_AREA );
-  remap_elapsed = remap_clock.toc();
-  remapElabInfo << "Rectif. processing: " << remap_elapsed << " sec - Freq: " << 1./remap_elapsed;
   // <---- Apply rectification
-
-}
-
-void DT_kv260_Node::stereo_matching(){
-  // ----> Stereo matching
-  sl_oc::tools::StopWatch stereo_clock;
-  resize_fact = 1.0;
+  //
+  // // ----> Stereo matching
   left_for_matcher = left_rect; // No data copy
   right_for_matcher = right_rect; // No data copy
   // Apply stereo matching
   left_matcher->compute(left_for_matcher, right_for_matcher,left_disp_half); //left_disp_half->CV_16UC1
-  left_disp_half.convertTo(left_disp_image, CV_8U, 255 / (stereoPar.numDisparities*16.)); //for RVIZ, left_disp_image ->CV_8UC1
   left_disp_half.convertTo(left_disp_float,CV_16UC1);
   cv::multiply(left_disp_float,1./16.,left_disp_float); // Last 4 bits of SGBM disparity are decimal
-
-  elapsed = stereo_clock.toc();
-  stereoElabInfo << "Stereo processing: " << elapsed << " sec - Freq: " << 1./elapsed;
   // <---- Stereo matching
+
+
+
+  //ROS
+  img_bridge = cv_bridge::CvImage(header_camera, sensor_msgs::image_encodings::BGR8 , left_raw);
+  img_bridge.toImageMsg(img_msg); // from cv_bridge to sensor_msgs::Image
+  pub_left.publish(img_msg);
+  return left_disp_float;
 }
 
-void DT_kv260_Node::create_depth_and_points(){
+list<point> DT_kv260_Node::create_depth_and_points(cv::Mat left_disp_float,
+                                                    double baseline, double fx, double fy, double cx, double cy){
+
   // ----> Extract Depth map
   // The DISPARITY MAP can be now transformed in DEPTH MAP using the formula
   // depth = (f * B) / disparity
   // where 'f' is the camera focal, 'B' is the camera baseline, 'disparity' is the pixel disparity
-  num = static_cast<double>(fx*baseline);
+  cv::Mat left_depth_map;
+  double num = static_cast<double>(fx*baseline);
   cv::divide(num,left_disp_float,left_depth_map);
   // <---- Extract Depth map
 
   // ----> Create Point Cloud
-  cloud_camera.reset(new pcl::PointCloud<pcl::PointXYZRGB>);
+  pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud; //ROS
+  cloud.reset(new pcl::PointCloud<pcl::PointXYZRGB>); //ROS
+
+  float tf_matrix[4][4] ={{ 0.939753,         0,  0.341854,         0},
+                          {        0,         1,         0,         0},
+                          {-0.341854,         0,  0.939753,         0},
+                          {        0,         0,         0,         1}};
+
+  list<point> pc_create;
   size_t buf_size = static_cast<size_t>(left_depth_map.cols * left_depth_map.rows);
   for(size_t idx=0; idx<buf_size;idx++ ){
     size_t r = idx/left_depth_map.cols;
     size_t c = idx%left_depth_map.cols;
     ushort depth = left_depth_map.at<ushort>(r, c); //left_depth_map is CV_16U
-    // std::cout << depth << " ";
-    if(!isinf(depth) && depth >0 && depth > stereoPar.minDepth_mm && depth < stereoPar.maxDepth_mm)
+    if(!isinf(depth) && depth >0 && depth > 300 && depth < 10000) //stereoPar.minDepth_mm=300, stereoPar.maxDepth_mm=10000
     {
-        pcl::PointXYZRGB pt;
-
         ushort ZZ = static_cast<ushort>(depth); // Z
         float Z = static_cast<float>(ZZ);
         float X = (c-cx)*depth/fx; // X
         float Y = (r-cy)*depth/fy; // Y
-        pt.y = -X / 1000.;
-        pt.z = -Y / 1000.;
-        pt.x = Z / 1000.;
+        if(c==640 && r==360) std::cout <<"Depth of the central pixel: "<< depth<< " (mm)"<<std::endl;
 
-        cv::Vec3b bgrPixel = left_raw.at<cv::Vec3b>(r, c);
-        pt.b = bgrPixel[0];
-        pt.g = bgrPixel[1];
-        pt.r = bgrPixel[2];
+        point tmp, tmp_base;
+        tmp.x = Z / 1000.;
+        tmp.y = -X / 1000.;
+        tmp.z = -Y / 1000.;
 
-        cloud_camera->push_back(pt);
-        if(c==640 && r==360){
-          std::cout <<"Depth of the central pixel: "<< depth<< " (mm)"<<std::endl;
-          // std::cout<<"x="<< pt.x<<",y="<<pt.y<<",z="<<pt.z<<","<<std::endl;
-        }
+        //tf camera_link -> base_link
+        tmp_base.x = tf_matrix[0][0] * tmp.x + tf_matrix[0][1] * tmp.y + tf_matrix[0][2] * tmp.z + tf_matrix[0][3];
+        tmp_base.y = tf_matrix[1][0] * tmp.x + tf_matrix[1][1] * tmp.y + tf_matrix[1][2] * tmp.z + tf_matrix[1][3];
+        tmp_base.z = tf_matrix[2][0] * tmp.x + tf_matrix[2][1] * tmp.y + tf_matrix[2][2] * tmp.z + tf_matrix[2][3];
+        pc_create.push_back(tmp_base);
 
+        //ROS
+        pcl::PointXYZRGB pt;
+        pt.x = tmp_base.x ;
+        pt.y = tmp_base.y ;
+        pt.z = tmp_base.z ;
+        cloud->push_back(pt); //ROS
     }
   }
+
+  // ROS
+  sensor_msgs::PointCloud2 ros_points;
+  toROSMsg(*cloud, ros_points);
+  ros_points.header.frame_id = "base_link";
+  ros_points.header.stamp = ros::Time::now(); // time
+  pub_pc.publish(ros_points);
+  // ros
+
+  return pc_create;
 }
 
-void DT_kv260_Node::create_laserscan(){
-  cloud_base.reset(new pcl::PointCloud<pcl::PointXYZRGB>);
-  pcl::transformPointCloud(*cloud_camera, *cloud_base, pose_matrix);
-  //determine amount of rays to create
-  uint32_t ranges_size = std::ceil((laser_output.angle_max - laser_output.angle_min) / laser_output.angle_increment);
-  laser_output.ranges.assign(ranges_size, laser_output.range_max + inf_epsilon_);
-  for(int nIndex=0;nIndex< cloud_base->points.size();nIndex++){
-    if (std::isnan(cloud_base->points[nIndex].x) || std::isnan(cloud_base->points[nIndex].y) || std::isnan(cloud_base->points[nIndex].z)) continue;
-    if (cloud_base->points[nIndex].z > max_height_ || cloud_base->points[nIndex].z < min_height_) continue;
-    double range = hypot(cloud_base->points[nIndex].x, cloud_base->points[nIndex].y);
+laser DT_kv260_Node::create_laserscan(list<point> pc){
+  // pointcloud_to_laserscan
+  double tolerance_=0.01;
+  double min_height_ = -0.1;
+  double max_height_ = 10;
+  double angle_min_ = -2.094395;
+  double angle_max_ = 2.094395;
+  double angle_increment_ = 0.017453;
+  double scan_time_ = 0.1;
+  double range_min_ = 0;
+  double range_max_ = 100;
+  double inf_epsilon_ = 1.0;
+
+
+  sensor_msgs::LaserScan laser_output; //ROS
+  laser_output.ranges.assign(241, 100);
+
+  laser ls;
+  for(int i=0;i<sizeof(ls.ranges)/sizeof(ls.ranges[0]);i++) ls.ranges[i]=99999;
+
+  list<point>::iterator it;
+  for (it = pc.begin(); it != pc.end(); ++it){
+    float tmp_x = (*it).x;
+    float tmp_y = (*it).y;
+    float tmp_z = (*it).z;
+    if (std::isnan(tmp_x) || std::isnan(tmp_y) || std::isnan(tmp_z)) continue;
+    if (tmp_z > max_height_ || tmp_z < min_height_) continue;
+    double range = hypot(tmp_x, tmp_y);
     if (range < range_min_) continue;
     if (range > range_max_) continue;
-    double angle = atan2(cloud_base->points[nIndex].y, cloud_base->points[nIndex].x);
-    if (angle < laser_output.angle_min || angle > laser_output.angle_max) continue;
+    double angle = atan2(tmp_y, tmp_x);
+    if (angle < angle_min_ || angle > angle_max_) continue;
     //overwrite range at laserscan ray if new range is smaller
-    int index = (angle - laser_output.angle_min) / laser_output.angle_increment;
-    if (range < laser_output.ranges[index])
-    {
-      laser_output.ranges[index] = range;
+    int index = (angle - angle_min_) / angle_increment_;
+    if (range < ls.ranges[index]) {
+      ls.ranges[index] = range;
+      laser_output.ranges[index] = range; //ROS
     }
   }
-}
-
-void DT_kv260_Node::pub_ros_topics(){
-  header_camera.seq = counter; // user defined counter
-  header_camera.stamp = ros::Time::now(); // time
-  header_camera.frame_id = "zed_mini";
-
-  sensor_msgs::PointCloud2 ros_points;
-  toROSMsg(*cloud_camera, ros_points);
-  ros_points.header= header_camera;
-  pub_pc.publish(ros_points);
-
-  img_bridge = cv_bridge::CvImage(header_camera, sensor_msgs::image_encodings::TYPE_8UC1 , left_disp_image);
-  img_bridge.toImageMsg(img_msg); // from cv_bridge to sensor_msgs::Image
-  pub_depth.publish(img_msg);
-  img_bridge = cv_bridge::CvImage(header_camera, sensor_msgs::image_encodings::BGR8 , left_raw);
-  img_bridge.toImageMsg(img_msg); // from cv_bridge to sensor_msgs::Image
-  pub_left.publish(img_msg);
-  img_bridge = cv_bridge::CvImage(header_camera, sensor_msgs::image_encodings::BGR8 , right_raw);
-  img_bridge.toImageMsg(img_msg); // from cv_bridge to sensor_msgs::Image
-  pub_right.publish(img_msg);
-
-  laser_output.header.seq = counter; // user defined counter
-  laser_output.header.stamp = ros::Time::now(); // time
-  laser_output.header.frame_id = "base_link";
-  pub_laser.publish(laser_output);
-}
-
-void DT_kv260_Node::obstacle_avoidance(){
-  ;
-  // TODO
-  min_range=laser_output->ranges[0];
-	min_range_angle=0;
-	for(int j=0;j<=241;j++) //increment by one degree
-		{
-		  	if(laser_output->ranges[j]<min_range && laser_output->ranges[j]!=0)
-			{
-				min_range=laser_output->ranges[j];
-				min_range_angle=j/2;
-      }
-		}
-		printf("minimum range is [%f] at an angle of [%f]\n",min_range,min_range_angle);
-	if(min_range<=0.5)  // min_range<=0.5 gave box pushing like behaviour, min_range<=1.2 gave obstacle avoidance
-	{
-		if(min_range_angle<90)
-		{
-			 cmdvel.angular.z=0.25;
-			 cmdvel.linear.x=0;
-			 printf("left\n");
-		}
-		else
-		{
-			 cmdvel.angular.z=-0.25;
-			 cmdvel.linear.x=0;
-			 printf("right\n");
-		}
-	}
-	else
-	{
-		cmdvel.linear.x=0.4;
-		cmdvel.angular.z=0;
-		printf("straight\n");
-	}
-}
 
 
-DT_kv260_Node::DT_kv260_Node():it_(nh_){
-  // tf
-  pose_matrix << 0.939753,         0,  0.341854,     0.075,
-                        0,         1,         0,     0.025,
-                -0.341854,         0,  0.939753,      0.15,
-                        0,         0,         0,         1;
-
-  // ros
-  pub_left = it_.advertise("left_raw", 1);
-  pub_right = it_.advertise("right_raw", 1);
-  pub_depth = it_.advertise("left_depth", 1);
-  pub_pc = nh_.advertise<sensor_msgs::PointCloud2>("points", 1);
-  pub_laser = nh_.advertise<sensor_msgs::LaserScan>("laser", 1);
-  counter = 0;
-
-
-  //pointcloud_to_laserscan
+  //ROS
   laser_output.angle_min = angle_min_;
   laser_output.angle_max = angle_max_;
   laser_output.angle_increment = angle_increment_;
@@ -193,6 +156,72 @@ DT_kv260_Node::DT_kv260_Node():it_(nh_){
   laser_output.scan_time = scan_time_;
   laser_output.range_min = range_min_;
   laser_output.range_max = range_max_;
+  laser_output.header.stamp = ros::Time::now(); // time
+  laser_output.header.frame_id = "base_link";
+  pub_laser.publish(laser_output);
+  //ROS
+  return ls;
+}
+
+
+cmd_vel DT_kv260_Node::obstacle_avoidance(laser ls){
+  cmd_vel motor_command;
+
+  float min_range = 99999;
+	int min_range_angle = -120;
+
+  volatile int j; //warning: iteration 241 invokes undefined behavior [-Waggressive-loop-optimizations] @@???
+	for(j=0; j<241;j++) //increment by one degree
+	{
+  	if(ls.ranges[j]<min_range && ls.ranges[j]!=0){
+			min_range = ls.ranges[j];
+			min_range_angle = j-120;
+    }
+	}
+	cout<<"minimum range is "<<min_range<<" at an angle of "<<min_range_angle<<endl;
+
+	if(min_range<=0.5)  // min_range<=0.5 gave box pushing like behaviour, min_range<=1.2 gave obstacle avoidance
+	{
+		if(min_range_angle<0)
+		{
+			 motor_command.angular_z=0.25;
+			 motor_command.linear_x=0;
+			 printf("left\n");
+		}
+		else
+		{
+			 motor_command.angular_z=-0.25;
+			 motor_command.linear_x=0;
+			 printf("right\n");
+		}
+	}
+	else
+	{
+		motor_command.linear_x=0.4;
+		motor_command.angular_z=0;
+		printf("straight\n");
+	}
+
+  return motor_command;
+}
+
+
+DT_kv260_Node::DT_kv260_Node():it_(nh_){
+  sl_oc::tools::StereoSgbmPar stereoPar;
+  std::string calibration_file;
+  cv::Mat cameraMatrix_left, cameraMatrix_right;
+  cv::Ptr<cv::StereoSGBM> left_matcher;
+  cv::Mat map_left_x, map_left_y;
+  cv::Mat map_right_x, map_right_y;
+  uint64_t sn, serial_number;
+  double baseline, fx, fy, cx, cy;
+
+
+  // ros
+  pub_left = it_.advertise("left_raw", 1);
+  pub_pc = nh_.advertise<sensor_msgs::PointCloud2>("points", 1);
+  pub_laser = nh_.advertise<sensor_msgs::LaserScan>("laser", 1);
+  // ros
 
   // ----> Create Video Capture
   sl_oc::video::VideoParams params;
@@ -225,6 +254,7 @@ DT_kv260_Node::DT_kv260_Node():it_(nh_){
   std::cout << "Calibration file found. Loading..." << std::endl;
 
   // ----> Frame size
+  int w, h;
   cap.getFrameSize(w,h);
   // <---- Frame size
 
@@ -277,12 +307,10 @@ DT_kv260_Node::DT_kv260_Node():it_(nh_){
 
     // ----> If the frame is valid we can display it
     if(frame.data!=nullptr){
-      image_process(frame);
-      stereo_matching();
-      create_depth_and_points();
-      create_laserscan();
-      pub_ros_topics();
-      obstacle_avoidance();
+      cv::Mat left_disp_float = stereo_matching(frame, stereoPar, left_matcher,map_left_x, map_left_y,map_right_x, map_right_y);
+      list<point> pc = create_depth_and_points(left_disp_float, baseline, fx, fy, cx, cy);
+      laser ls = create_laserscan(pc);
+      cmd_vel motor_command = obstacle_avoidance(ls);
     }
     // <---- If the frame is valid we can display it
 

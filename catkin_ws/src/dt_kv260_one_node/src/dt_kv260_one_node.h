@@ -7,6 +7,8 @@
 #include <math.h>
 #include <signal.h>
 #include <Eigen/Geometry>
+#include <iterator>
+#include <list>
 
 // ZED
 #include "videocapture.hpp"
@@ -44,50 +46,44 @@ using namespace ros;
 using namespace pcl;
 using namespace std;
 
+struct point{
+  float x;
+  float y;
+  float z;
+};
+
+struct laser{
+  float ranges[241];
+};
+
+struct cmd_vel{
+  float linear_x;
+  float angular_z;
+};
+
+
 
 class DT_kv260_Node{
 public:
   DT_kv260_Node();
-  void image_process(const sl_oc::video::Frame frame);
-  void stereo_matching();
-  void create_depth_and_points();
-  void create_laserscan();
-  void pub_ros_topics();
-  void obstacle_avoidance();
+  cv::Mat stereo_matching(const sl_oc::video::Frame frame,
+                          sl_oc::tools::StereoSgbmPar stereoPar,
+                          cv::Ptr<cv::StereoSGBM> left_matcher,
+                          cv::Mat map_left_x,
+                          cv::Mat map_left_y,
+                          cv::Mat map_right_x,
+                          cv::Mat map_right_y);
+
+  list<point> create_depth_and_points(cv::Mat left_disp_float, double baseline, double fx, double fy, double cx, double cy);
+  laser create_laserscan(list<point> pc);
+  cmd_vel obstacle_avoidance(laser);
 private:
   NodeHandle nh_;
   image_transport::ImageTransport it_;
-  image_transport::Publisher pub_left, pub_right, pub_depth;
+  image_transport::Publisher pub_left;
   ros::Publisher pub_pc, pub_laser;
   cv_bridge::CvImage img_bridge;
   sensor_msgs::Image img_msg; // >> message to be sent
-  std_msgs::Header header_camera, header_base; // empty header
-  uint64_t counter, lastFrameTs, sn, serial_number;
-  int w, h;
-  double now, elapsed_sec, lastTime, baseline, fx, fy, cx, cy, remap_elapsed, resize_fact, elapsed, num;
-  std::string calibration_file;
-  cv::Mat frameYUV, frameBGR, left_raw, left_rect, right_raw, right_rect, left_for_matcher, right_for_matcher, left_disp_half,left_disp,left_disp_float, left_disp_vis, left_depth_map, left_disp_image;
-  cv::Mat map_left_x, map_left_y;
-  cv::Mat map_right_x, map_right_y;
-  cv::Mat cameraMatrix_left, cameraMatrix_right;
-  cv::Ptr<cv::StereoSGBM> left_matcher;
-  std::stringstream remapElabInfo, stereoElabInfo;
+  std_msgs::Header header_camera; // empty header
 
-  Eigen::Matrix4f pose_matrix;
-  pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_camera, cloud_base;
-
-  // pointcloud_to_laserscan
-  double tolerance_=0.01;
-  double min_height_ = 0.005;
-  double max_height_ = 10;
-  double angle_min_ = -2.094395;
-  double angle_max_ = 2.094395;
-  double angle_increment_ = 0.017453;
-  double scan_time_ = 0.1;
-  double range_min_ = 0;
-  double range_max_ = 100;
-  double inf_epsilon_ = 1.0;
-  sensor_msgs::LaserScan laser_output;
-
-  sl_oc::tools::StereoSgbmPar stereoPar;// ----> Stereo matcher initialization
 };
