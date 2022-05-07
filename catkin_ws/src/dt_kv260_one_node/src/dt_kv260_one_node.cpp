@@ -41,7 +41,7 @@ cv::Mat DT_kv260_Node::stereo_matching(const sl_oc::video::Frame frame,
   return left_disp_float;
 }
 
-list<point> DT_kv260_Node::create_depth_and_points(cv::Mat left_disp_float,
+laser DT_kv260_Node::create_depth_and_points_and_laser(cv::Mat left_disp_float,
                                                     double baseline, double fx, double fy, double cx, double cy){
 
   // ----> Extract Depth map
@@ -64,6 +64,24 @@ list<point> DT_kv260_Node::create_depth_and_points(cv::Mat left_disp_float,
 
   list<point> pc_create;
   size_t buf_size = static_cast<size_t>(left_depth_map.cols * left_depth_map.rows);
+
+  // pointcloud_to_laserscan
+  double tolerance_=0.01;
+  double min_height_ = -0.1;
+  double max_height_ = 10;
+  double angle_min_ = -2.094395;
+  double angle_max_ = 2.094395;
+  double angle_increment_ = 0.017453;
+  double scan_time_ = 0.1;
+  double range_min_ = 0;
+  double range_max_ = 100;
+
+  sensor_msgs::LaserScan laser_output; //ROS
+  laser_output.ranges.assign(241, range_max_); //ROS
+
+  laser ls;
+  for(int i=0;i<sizeof(ls.ranges)/sizeof(ls.ranges[0]);i++) ls.ranges[i]=range_max_;
+
   for(size_t idx=0; idx<buf_size;idx++ ){
     size_t r = idx/left_depth_map.cols;
     size_t c = idx%left_depth_map.cols;
@@ -74,7 +92,7 @@ list<point> DT_kv260_Node::create_depth_and_points(cv::Mat left_disp_float,
         float Z = static_cast<float>(ZZ);
         float X = (c-cx)*depth/fx; // X
         float Y = (r-cy)*depth/fy; // Y
-        if(c==640 && r==360) std::cout <<"Depth of the central pixel: "<< depth<< " (mm)"<<std::endl;
+        // if(c==640 && r==360) std::cout <<"Depth of the central pixel: "<< depth<< " (mm)"<<std::endl;
 
         point tmp, tmp_base;
         tmp.x = Z / 1000.;
@@ -86,6 +104,24 @@ list<point> DT_kv260_Node::create_depth_and_points(cv::Mat left_disp_float,
         tmp_base.y = tf_matrix[1][0] * tmp.x + tf_matrix[1][1] * tmp.y + tf_matrix[1][2] * tmp.z + tf_matrix[1][3];
         tmp_base.z = tf_matrix[2][0] * tmp.x + tf_matrix[2][1] * tmp.y + tf_matrix[2][2] * tmp.z + tf_matrix[2][3];
         pc_create.push_back(tmp_base);
+
+        // -----> create 2D laser
+        if (std::isnan(tmp_base.x) || std::isnan(tmp_base.y) || std::isnan(tmp_base.z)) continue;
+        if (tmp_base.z > max_height_ || tmp_base.z < min_height_) continue;
+        double range = hypot(tmp_base.x, tmp_base.y);
+        if (range < range_min_) continue;
+        if (range > range_max_) continue;
+        double angle = atan2(tmp_base.y, tmp_base.x);
+        if (angle < angle_min_ || angle > angle_max_) continue;
+        //overwrite range at laserscan ray if new range is smaller
+        int index = (angle - angle_min_) / angle_increment_;
+        if (range < ls.ranges[index]) {
+          ls.ranges[index] = range;
+          laser_output.ranges[index] = range; //ROS
+        }
+        // <----- create 2D laser
+
+
 
         //ROS
         pcl::PointXYZRGB pt;
@@ -102,53 +138,7 @@ list<point> DT_kv260_Node::create_depth_and_points(cv::Mat left_disp_float,
   ros_points.header.frame_id = "base_link";
   ros_points.header.stamp = ros::Time::now(); // time
   pub_pc.publish(ros_points);
-  // ros
 
-  return pc_create;
-}
-
-laser DT_kv260_Node::create_laserscan(list<point> pc){
-  // pointcloud_to_laserscan
-  double tolerance_=0.01;
-  double min_height_ = -0.1;
-  double max_height_ = 10;
-  double angle_min_ = -2.094395;
-  double angle_max_ = 2.094395;
-  double angle_increment_ = 0.017453;
-  double scan_time_ = 0.1;
-  double range_min_ = 0;
-  double range_max_ = 100;
-  double inf_epsilon_ = 1.0;
-
-
-  sensor_msgs::LaserScan laser_output; //ROS
-  laser_output.ranges.assign(241, 100);
-
-  laser ls;
-  for(int i=0;i<sizeof(ls.ranges)/sizeof(ls.ranges[0]);i++) ls.ranges[i]=99999;
-
-  list<point>::iterator it;
-  for (it = pc.begin(); it != pc.end(); ++it){
-    float tmp_x = (*it).x;
-    float tmp_y = (*it).y;
-    float tmp_z = (*it).z;
-    if (std::isnan(tmp_x) || std::isnan(tmp_y) || std::isnan(tmp_z)) continue;
-    if (tmp_z > max_height_ || tmp_z < min_height_) continue;
-    double range = hypot(tmp_x, tmp_y);
-    if (range < range_min_) continue;
-    if (range > range_max_) continue;
-    double angle = atan2(tmp_y, tmp_x);
-    if (angle < angle_min_ || angle > angle_max_) continue;
-    //overwrite range at laserscan ray if new range is smaller
-    int index = (angle - angle_min_) / angle_increment_;
-    if (range < ls.ranges[index]) {
-      ls.ranges[index] = range;
-      laser_output.ranges[index] = range; //ROS
-    }
-  }
-
-
-  //ROS
   laser_output.angle_min = angle_min_;
   laser_output.angle_max = angle_max_;
   laser_output.angle_increment = angle_increment_;
@@ -159,7 +149,9 @@ laser DT_kv260_Node::create_laserscan(list<point> pc){
   laser_output.header.stamp = ros::Time::now(); // time
   laser_output.header.frame_id = "base_link";
   pub_laser.publish(laser_output);
-  //ROS
+  // ros
+
+  // return pc_create;
   return ls;
 }
 
@@ -308,8 +300,7 @@ DT_kv260_Node::DT_kv260_Node():it_(nh_){
     // ----> If the frame is valid we can display it
     if(frame.data!=nullptr){
       cv::Mat left_disp_float = stereo_matching(frame, stereoPar, left_matcher,map_left_x, map_left_y,map_right_x, map_right_y);
-      list<point> pc = create_depth_and_points(left_disp_float, baseline, fx, fy, cx, cy);
-      laser ls = create_laserscan(pc);
+      laser ls = create_depth_and_points_and_laser(left_disp_float, baseline, fx, fy, cx, cy);
       cmd_vel motor_command = obstacle_avoidance(ls);
     }
     // <---- If the frame is valid we can display it

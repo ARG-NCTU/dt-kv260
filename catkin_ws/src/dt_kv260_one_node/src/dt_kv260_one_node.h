@@ -74,10 +74,11 @@ public:
                           cv::Mat map_right_x,
                           cv::Mat map_right_y);
 
-  list<point> create_depth_and_points(cv::Mat left_disp_float, double baseline, double fx, double fy, double cx, double cy);
-  laser create_laserscan(list<point> pc);
+  laser create_depth_and_points_and_laser(cv::Mat left_disp_float, double baseline, double fx, double fy, double cx, double cy);
   cmd_vel obstacle_avoidance(laser);
+
 private:
+  // All for ROS
   NodeHandle nh_;
   image_transport::ImageTransport it_;
   image_transport::Publisher pub_left;
