@@ -26,7 +26,9 @@
 #include <ros/package.h>
 #include <sensor_msgs/PointCloud2.h>
 #include <sensor_msgs/LaserScan.h>
+#include <sensor_msgs/Joy.h>
 #include <geometry_msgs/Vector3.h>
+#include <geometry_msgs/Twist.h>
 
 // cv_bridge
 #include <ros/ros.h>
@@ -76,15 +78,19 @@ public:
 
   laser create_depth_and_points_and_laser(cv::Mat left_disp_float, double baseline, double fx, double fy, double cx, double cy);
   cmd_vel obstacle_avoidance(laser);
+  void joystickHandler(const sensor_msgs::Joy::ConstPtr& joy);
 
 private:
   // All for ROS
   NodeHandle nh_;
   image_transport::ImageTransport it_;
   image_transport::Publisher pub_left;
-  ros::Publisher pub_pc, pub_laser;
+  ros::Publisher pub_pc, pub_laser, pubSpeed;
+  ros::Subscriber subJoystick;
   cv_bridge::CvImage img_bridge;
   sensor_msgs::Image img_msg; // >> message to be sent
   std_msgs::Header header_camera; // empty header
+  bool flag = 0;
+
 
 };

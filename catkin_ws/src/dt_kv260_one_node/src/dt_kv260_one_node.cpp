@@ -1,4 +1,23 @@
 #include "dt_kv260_one_node.h"
+void DT_kv260_Node::joystickHandler(const sensor_msgs::Joy::ConstPtr& joy)
+{
+  if(joy->buttons[8]==1 ){
+    cout<<" switch to manual"<<endl;
+    flag = 0;
+  }
+  if(joy->buttons[9]==1){
+    cout<<" switch to auto"<<endl;
+    flag = 1;
+  }
+
+  if(!flag){
+    geometry_msgs::Twist cmd_vel;
+    cmd_vel.linear.x = joy->axes[1];
+    cmd_vel.angular.z = joy->axes[0];
+    cout<<"linear.x "<<joy->axes[1]<<"  angular.z "<<joy->axes[0]<<endl;
+    pubSpeed.publish(cmd_vel);
+  }
+}
 
 cv::Mat DT_kv260_Node::stereo_matching(const sl_oc::video::Frame frame,
                                         sl_oc::tools::StereoSgbmPar stereoPar,
@@ -170,30 +189,43 @@ cmd_vel DT_kv260_Node::obstacle_avoidance(laser ls){
 			min_range_angle = j-120;
     }
 	}
-	cout<<"minimum range is "<<min_range<<" at an angle of "<<min_range_angle<<endl;
+	if(flag) cout<<"minimum range is "<<min_range<<" at an angle of "<<min_range_angle<<endl;
 
 	if(min_range<=0.5)  // min_range<=0.5 gave box pushing like behaviour, min_range<=1.2 gave obstacle avoidance
 	{
 		if(min_range_angle<0)
 		{
-			 motor_command.angular_z=0.25;
-			 motor_command.linear_x=0;
-			 printf("left\n");
+			 motor_command.angular_z=0.1;
+			 motor_command.linear_x=-0.1;
+			 if(flag) printf("left\n");
 		}
 		else
 		{
-			 motor_command.angular_z=-0.25;
-			 motor_command.linear_x=0;
-			 printf("right\n");
+			 motor_command.angular_z=-0.1;
+			 motor_command.linear_x=-0.1;
+			 if(flag) printf("right\n");
 		}
+    // else
+		// {
+		// 	 motor_command.angular_z=0;
+		// 	 motor_command.linear_x=-0.2;
+		// 	 if(flag) printf("turn back\n");
+		// }
 	}
 	else
 	{
-		motor_command.linear_x=0.4;
+		motor_command.linear_x=0.2;
 		motor_command.angular_z=0;
-		printf("straight\n");
+		if(flag) printf("straight\n");
 	}
 
+
+  if(flag){
+    geometry_msgs::Twist cmd_vel;
+    cmd_vel.linear.x = motor_command.linear_x;
+    cmd_vel.angular.z = motor_command.angular_z;
+    pubSpeed.publish(cmd_vel);
+  }
   return motor_command;
 }
 
@@ -213,6 +245,8 @@ DT_kv260_Node::DT_kv260_Node():it_(nh_){
   pub_left = it_.advertise("left_raw", 1);
   pub_pc = nh_.advertise<sensor_msgs::PointCloud2>("points", 1);
   pub_laser = nh_.advertise<sensor_msgs::LaserScan>("laser", 1);
+  pubSpeed = nh_.advertise<geometry_msgs::Twist> ("cmd_vel", 5);
+  subJoystick = nh_.subscribe<sensor_msgs::Joy> ("joy", 5, &DT_kv260_Node::joystickHandler, this);
   // ros
 
   // ----> Create Video Capture
