@@ -1,0 +1,7 @@
+<launch>
+    <arg name="pkg_name" value="lane_following"/>
+
+    <node pkg="$(arg pkg_name)" type="lane_following.py" name="lane_following"  output="screen">
+    </node>
+
+</launch>
