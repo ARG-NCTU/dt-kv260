@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+from pynq_dpu import DpuOverlay
+# Load DPU uart overlay
+overlay = DpuOverlay("/home/argnctu/dt-kv260/overlays/dpu_uartlite/dpu_uartlite.bit")
+
 import os
 import sys
 import cv2
@@ -12,9 +16,6 @@ from sensor_msgs.msg import Image
 from geometry_msgs.msg import Twist
 from std_msgs.msg import Float64
 from cv_bridge import CvBridge, CvBridgeError
-
-from pynq_dpu import DpuOverlay
-sys.path.append('/home/argnctu/dt-kv260/overlays')
 
 class Lane_follow():
     def __init__(self):
@@ -37,17 +38,14 @@ class Lane_follow():
         rospy.loginfo("[%s] init done." % (self.node_name))
 
     def initial(self):
-        # Load PYNQ DPU overlay
-        overlay = DpuOverlay("dpu_uartlite.bit")
-        
         # Load pretrained model
-        overlay.load_model("../weights/lane_following.xmodel")
+        overlay.load_model("/home/argnctu/dt-kv260/catkin_ws/src/lane_following/weights/lane_following.xmodel")
         
         # Use Vitis AI Runtime
         self.dpu = overlay.runner
 
-        inputTensors = dpu.get_input_tensors()
-        outputTensors = dpu.get_output_tensors()
+        inputTensors = self.dpu.get_input_tensors()
+        outputTensors = self.dpu.get_output_tensors()
 
         shapeIn = tuple(inputTensors[0].dims)
         shapeOut = tuple(outputTensors[0].dims)
@@ -67,7 +65,7 @@ class Lane_follow():
 
         cv_img = self.cv_bridge.imgmsg_to_cv2(data, "bgr8")
         self.input_data[0] = self.preprocess_fn(cv_img)
-
+        
         job_id = self.dpu.execute_async(self.input_data, self.output_data)
         self.dpu.wait(job_id)
 
