@@ -7,7 +7,6 @@ overlay = DpuOverlay("/home/argnctu/dt-kv260/overlays/dpu_uartlite/dpu_uartlite.
 import os
 import sys
 import cv2
-import gdown
 import numpy as np
 import rospy
 import rospkg
