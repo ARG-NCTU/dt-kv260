@@ -49,7 +49,6 @@ docker run \
     -v "/tmp/.X11-unix:/tmp/.X11-unix" \
     -v "/etc/localtime:/etc/localtime:ro" \
     -v "/dev:/dev" \
-    -v "/usr/lib:/usr/lib" \
     -v "/var/run/docker.sock:/var/run/docker.sock" \
     --workdir "/home/argnctu/dt-kv260" \
     --user root \
