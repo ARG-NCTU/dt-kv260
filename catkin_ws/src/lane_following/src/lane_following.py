@@ -1,8 +1,14 @@
 #!/usr/bin/env python3
 
+import time
 from pynq_dpu import DpuOverlay
 # Load DPU uart overlay
-overlay = DpuOverlay("/home/argnctu/dt-kv260/overlays/dpu_uartlite/dpu_uartlite.bit")
+overlay = DpuOverlay("/home/argnctu/dt-kv260/overlays/dpu_uartlite/dpu_uartlite.bit", download=False)
+if not overlay.is_loaded():
+    start = time.time()
+    overlay.download()
+    end = time.time()
+    print("Load overlay using {}ms.".format((end-start)))
 
 import os
 import sys
@@ -29,10 +35,10 @@ class Lane_follow():
         self.initial()
 
         # Subscriber
-        self.image_sub = rospy.Subscriber("/camera/color/image_raw", Image, self.img_cb, queue_size=1)
+        self.image_sub = rospy.Subscriber("image_raw", Image, self.img_cb, queue_size=1)
         
         # Publisher
-        self.pub_car_cmd = rospy.Publisher("/cmd_vel_mux/input/teleop", Twist, queue_size=1)
+        self.pub_car_cmd = rospy.Publisher("cmd_vel", Twist, queue_size=1)
 
         rospy.loginfo("[%s] init done." % (self.node_name))
 
