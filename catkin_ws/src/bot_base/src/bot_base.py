@@ -5,9 +5,9 @@ from pynq_dpu import DpuOverlay
 # Load DPU uart overlay
 overlay = DpuOverlay("/home/argnctu/dt-kv260/overlays/dpu_uartlite/dpu_uartlite.bit", download=False)
 if not overlay.is_loaded():
-    start = time.time()
+    start = time()
     overlay.download()
-    end = time.time()
+    end = time()
     print("Load overlay using {}ms.".format((end-start)))
 
 import rospy
@@ -93,20 +93,20 @@ class UartLite:
             buf = self.read(1)
         return ret
 
+# Setup uart
+uart = UartLite(overlay.axi_uartlite_0)
 
 class Motor_control():
     def __init__(self):
         
         # Subscriber
         self.sub_cmd = rospy.Subscriber("cmd_vel", Twist, self.cb_cmd_vel)
-        # Setup uart
-        self.uart = UartLite(overlay.axi_uartlite_0)
 
 
-    def cb_cmd_vel(msg):
+    def cb_cmd_vel(self, msg):
         self.cmd_vel_control(msg.linear.x, msg.angular.z)
 
-    def cmd_vel_control(linear_x, angular_z):
+    def cmd_vel_control(self, linear_x, angular_z):
 
         if (linear_x==0 and angular_z==0):
             speed_wish_right, speed_wish_left = 0, 0
@@ -143,7 +143,7 @@ class Motor_control():
         
         # print("uart pkg= ", pkg)
         
-        self.uart.write(pkg)
+        uart.write(pkg)
 
 
 if __name__=="__main__":
