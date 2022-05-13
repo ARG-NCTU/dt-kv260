@@ -15,7 +15,7 @@ Ex: dt-nano-bot-01, dt-rpi-boat-03, dt-kv260-anchor-07
 
 | Hostname        | IP Address      | Status          | Who is using    |
 | --------------- | --------------  | --------------  | --------------- |
-| dt-kv260-bot-01 | 192.168.50.171  | Unavailable     | Nick            |
+| dt-kv260-bot-01 | 192.168.50.171  | Unavailable     | Sensor tower    |
 | 02              | ----            | Unavailable     | Prof. Lai's lab |
 | 03              | ----            | Unavailable     | Defense         |
 | dt-kv260-bot-04 | 192.168.50.95   | Unavailable     | Ezra            |
@@ -32,9 +32,20 @@ Ex: dt-nano-bot-01, dt-rpi-boat-03, dt-kv260-anchor-07
 | 15              | ----            | Unavailable     | Defense         |
 | 16              | ----            | Unavailable     | Defense         |
 | 17              | ----            | Unavailable     | Defense         |
-| 18              | ----            | Unavailable     | senior Lu       |
-| 19              | ----            | Unavailable     | Jacopo          |
-| 20              | ----            | Unavailable     | Jacopo          |
+| 18              | ----            | Available       | ----            |
+| 19              | ----            | Available       | ----            |
+| 20              | ----            | Available       | ----            |
+| 21              | ----            | Available       | ----            |
+| 22              | ----            | Available       | ----            |
+| 23              | ----            | Available       | ----            |
+| 24              | ----            | Available       | ----            |
+| 25              | ----            | Available       | ----            |
+| 26              | ----            | Available       | ----            |
+| 27              | ----            | Available       | ----            |
+| 28              | ----            | Unavailable     | senior Lu       |
+| 29              | ----            | Unavailable     | Jacopo          |
+| 30              | ----            | Unavailable     | Jacopo          |
+
 
 ## List of DuckieBot
 

@@ -19,7 +19,7 @@ ENV HOME=/home/${USER}
 RUN adduser --disabled-password \
     --gecos "Default user" \
     --uid ${UID} \
-    ${USER} 
+    ${USER}
 
 RUN echo "root:root" | chpasswd
 RUN echo "${USER}:111111" | chpasswd
@@ -37,6 +37,7 @@ RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -yq dist-upgrade \
     wget \
     curl \
     sudo \
+    unzip \
     lsb-release \
     build-essential \
     net-tools \
@@ -72,6 +73,10 @@ RUN apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E
 RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -o Acquire::ForceIPv4=true install --no-install-recommends -y \
     ros-$ROS_DISTRO-desktop-full \
     ros-$ROS_DISTRO-ddynamic-reconfigure \
+    ros-$ROS_DISTRO-tf2* \
+    ros-$ROS_DISTRO-teleop-twist-joy* \
+    ros-$ROS_DISTRO-rosserial \
+    ros-$ROS_DISTRO-rosserial-arduino \
     python3-rosdep \
     python3-rosinstall \
     python3-rosinstall-generator \
@@ -120,7 +125,7 @@ RUN wget https://github.com/IntelRealSense/librealsense/archive/v${LIBREALSENSE_
 
 RUN pip3 install --upgrade pip setuptools
 
-RUN pip3 install -U\
+RUN pip3 install -U \
     rospkg \
     catkin-tools \
     matplotlib \
@@ -128,12 +133,74 @@ RUN pip3 install -U\
     gdown \
     argcomplete
 
+##################################### PYNQ ######################################
+ 
+RUN git clone https://github.com/Xilinx/PYNQ.git pynq
+
+# Install Required Debian Packages
+RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 \
+        --verbose 803DDF595EA7B6644F9B96B752150A179A9E84C9
+
+RUN echo "deb http://ppa.launchpad.net/ubuntu-xilinx/updates/ubuntu focal main" > /etc/apt/sources.list.d/xilinx-gstreamer.list
+
+RUN apt-get -o DPkg::Lock::Timeout=10 update && apt-get install -y \
+    python3.8-venv \
+    python3-cffi \
+    libssl-dev \
+    libcurl4-openssl-dev \
+    portaudio19-dev \
+    libcairo2-dev \
+    libdrm-xlnx-dev \
+    libopencv-dev \
+    python3-opencv \
+    graphviz \
+    i2c-tools \
+    fswebcam \
+    libblas3 \
+    libblkid1 \
+    libboost-atomic-dev \
+    libboost-chrono-dev \
+    libboost-filesystem1.71.0 \
+    device-tree-compiler \
+    vitis-ai-runtime \
+    && rm -rf /var/lib/apt/lists/*
+
+# PYNQ Allocator
+RUN mkdir -p /tmp && \
+    cp -r pynq/sdbuild/packages/libsds/libcma /tmp && \
+    cd /tmp/libcma &&\
+    make -t && \ 
+    make install && \
+    rm -rf /tmp/libcma
+
+# PYNQ Python Package
+RUN python3 -m pip install pynq
+
+# Set up pynq pl_server
+RUN cp pynq/sdbuild/packages/pynq/pl_server.sh /usr/local/bin && \
+    cp pynq/sdbuild/packages/pynq/pl_server.service /lib/systemd/system && \
+    systemctl enable pl_server
+
+# Install DPU-PYNQ
+RUN python3 -m pip install pynq-dpu --no-use-pep517
+
+RUN echo "firmware: /usr/lib/dpu.xclbin" >> /etc/vart.conf
+RUN echo "export XILINX_XRT=/usr" >> ${HOME}/.bashrc
+
+# Setup binary files
+RUN gdown --id 1O1rslR4EgsA_vbx0i2JV6oQrzlL9E6t2 -O binary_files.zip && \
+    unzip binary_files.zip && \
+    cp binary_files/dpu.xclbin /usr/lib/ && \
+    mkdir /lib/firmware/ && \
+    cp binary_files/dpu_uartlite.bin /lib/firmware/ && \
+    rm binary_files.zip
+
 ##################################### setting ###################################################
 RUN chown -R ${USER}:${USER} ${HOME}/
 RUN echo "${USER} ALL=(ALL)  ALL" >> /etc/sudoers
 
 # Support of nvidia-docker 2.0
 ENV NVIDIA_VISIBLE_DEVICES=all
-ENV NVIDIA_DRIVER_CAPABILITIES=all
+ENV NVIDIA_DRIVER_CAPABILITIES=alli
 
 WORKDIR ${HOME}
