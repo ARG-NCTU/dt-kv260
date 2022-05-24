@@ -32,9 +32,9 @@ Ex: dt-nano-bot-01, dt-rpi-boat-03, dt-kv260-anchor-07
 | 15              | ----            | Unavailable     | Defense         |
 | 16              | ----            | Unavailable     | Defense         |
 | 17              | ----            | Unavailable     | Defense         |
-| 18              | ----            | Available       | ----            |
-| 19              | ----            | Available       | ----            |
-| 20              | ----            | Available       | ----            |
+| 18              | ----            | Unavailable     | HLS student     |
+| 19              | ----            | Unavailable     | HLS student     |
+| 20              | ----            | Unavailable     | Sensor tower    |
 | 21              | ----            | Available       | ----            |
 | 22              | ----            | Available       | ----            |
 | 23              | ----            | Available       | ----            |
