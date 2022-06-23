@@ -75,6 +75,7 @@ KV260 $ source download_weights.sh
 
 Launch lane following node.
 ```
+KV260 $ docker stop $(docker ps -aq)
 KV260 $ cd ~/dt-kv260
 KV260 $ source docker_run.sh
 
