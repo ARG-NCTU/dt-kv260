@@ -17,25 +17,25 @@ Ex: dt-nano-bot-01, dt-rpi-boat-03, dt-kv260-anchor-07
 | --------------- | --------------  | --------------  | --------------- |
 | dt-kv260-bot-01 | 192.168.50.171  | Unavailable     | Sensor tower    |
 | 02              | ----            | Unavailable     | Prof. Lai's lab |
-| 03              | ----            | Unavailable     | Defense         |
-| dt-kv260-bot-04 | 192.168.50.95   | Unavailable     | Ezra            |
+| 03              | ----            | Unavailable     | Duckiebot       |
+| dt-kv260-bot-04 | 192.168.50.95   | Unavailable     | Duckiebot       |
 | dt-kv260-bot-05 | 192.168.50.124  | Unavailable     | Louis           |
 | dt-kv260-bot-06 | 192.168.50.51   | Unavailable     | MF              |
 | dt-kv260-bot-07 | 192.168.50.183  | Unavailable     | Bory            |
-| dt-kv260-bot-08 | 192.168.50.111  | Unavailable     | L-Ray           |
-| dt-kv260-bot-09 | 192.168.50.147  | Unavailable     | Sam             |
+| dt-kv260-bot-08 | 192.168.50.111  | Unavailable     | Duckiebot       |
+| dt-kv260-bot-09 | 192.168.50.147  | Unavailable     | Duckiebot       |
 | dt-kv260-bot-10 | 192.168.50.129  | Unavailable     | Isabella        |
 | dt-kv260-bot-11 | 192.168.50.54   | Unavailable     | Yellow          |
 | dt-kv260-bot-12 | 192.168.50.102  | Unavailable     | Rick            |
 | 13              | ----            | Unavailable     | Austin          |
 | 14              | ----            | Unavailable     | Prof. Lai's lab |
-| 15              | ----            | Unavailable     | Defense         |
-| 16              | ----            | Unavailable     | Defense         |
-| 17              | ----            | Unavailable     | Defense         |
-| 18              | ----            | Available       | ----            |
-| 19              | ----            | Available       | ----            |
-| 20              | ----            | Available       | ----            |
-| 21              | ----            | Available       | ----            |
+| 15              | ----            | Unavailable     | Duckiebot       |
+| 16              | ----            | Unavailable     | Duckiebot       |
+| 17              | ----            | Unavailable     | Duckiebot       |
+| 18              | ----            | Unavailable     | HLS student     |
+| 19              | ----            | Unavailable     | HLS student     |
+| 20              | ----            | Unavailable     | Sensor tower    |
+| 21              | ----            | Unavailable     | Sensor tower    |
 | 22              | ----            | Available       | ----            |
 | 23              | ----            | Available       | ----            |
 | 24              | ----            | Available       | ----            |

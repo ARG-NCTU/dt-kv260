@@ -27,6 +27,7 @@ class Lane_follow():
         
         self.node_name = rospy.get_name()
         self.cv_bridge = CvBridge()
+        self.flag = 0
         self.omega = 0
         
         # motor omega output
@@ -36,6 +37,7 @@ class Lane_follow():
 
         # Subscriber
         self.image_sub = rospy.Subscriber("image_raw", Image, self.img_cb, queue_size=1)
+        self.joy_sub = rospy.Subscriber("joy", Joy, self.joy_cb, queue_size=1)
         
         # Publisher
         self.pub_car_cmd = rospy.Publisher("cmd_vel", Twist, queue_size=1)
@@ -63,27 +65,41 @@ class Lane_follow():
 
     def preprocess_fn(self, image):
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        image = cv2.resize(image, (480, 640))
         image = np.asarray(image/255.0, dtype=np.float32)
         return image
 
-    def img_cb(self, data):
-
-        cv_img = self.cv_bridge.imgmsg_to_cv2(data, "bgr8")
-        self.input_data[0] = self.preprocess_fn(cv_img)
+    def joy_cb(self, msg):
+        if msg.buttons[6] == 1:
+            print("switch to manual")
+            self.flag = 0
+            car_cmd_msg = Twist()
+            car_cmd_msg.linear.x = 0
+            car_cmd_msg.angular.z = 0
+            self.pub_car_cmd.publish(car_cmd_msg)
         
-        job_id = self.dpu.execute_async(self.input_data, self.output_data)
-        self.dpu.wait(job_id)
+        if msg.buttons[7] == 1:
+            print("switch to auto")
+            self.flag = 1
+    
+    def img_cb(self, data):
+        if(self.flag):
+            cv_img = self.cv_bridge.imgmsg_to_cv2(data, "bgr8")
+            self.input_data[0] = self.preprocess_fn(cv_img)
+        
+            job_id = self.dpu.execute_async(self.input_data, self.output_data)
+            self.dpu.wait(job_id)
 
-        probs = self.calculate_softmax(self.output_data[0])
-        top1 = np.argmax(probs)
+            probs = self.calculate_softmax(self.output_data[0])
+            top1 = np.argmax(probs)
 
-        self.omega = self.Omega[top1]
+            self.omega = self.Omega[top1]
 
-        # motor control
-        car_cmd_msg = Twist()
-        car_cmd_msg.linear.x = 0.123
-        car_cmd_msg.angular.z = self.omega*0.64
-        self.pub_car_cmd.publish(car_cmd_msg)
+            # motor control
+            car_cmd_msg = Twist()
+            car_cmd_msg.linear.x = 0.123
+            car_cmd_msg.angular.z = self.omega*0.64
+            self.pub_car_cmd.publish(car_cmd_msg)
 
 if __name__=="__main__":
     rospy.init_node("lane_follow", anonymous=True)

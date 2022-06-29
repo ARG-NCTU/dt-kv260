@@ -1,0 +1,6 @@
+<launch>
+    <arg name="pkg_name" value="dt_kv260_one_node"/>
+
+    <node pkg="$(arg pkg_name)" type="anyone_node" name="obs_aviod_one_node" />
+
+</launch>
