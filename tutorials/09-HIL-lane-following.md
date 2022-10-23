@@ -57,12 +57,12 @@ Docker $ python scripts/baseline_navi/setup.py
 
 ## KV260
 
-We will ssh into KV260 to launch the lane following node.
+We will SSH into KV260 to launch the lane following node.
 
 ### Terminal 1
 Pull the latest docker image.
 ```
-Host PC $ ssh <user_name>@10.42.0.3
+Host PC $ ssh ubuntu@10.42.0.3
 
 KV260 $ docker pull argnctu/dt-kv260:latest
 ```
@@ -79,15 +79,15 @@ KV260 $ docker stop $(docker ps -aq)
 KV260 $ cd ~/dt-kv260
 KV260 $ source docker_run.sh
 
-Docker $ source catkin_make.sh
 Docker $ source environment.sh 10.42.0.2 10.42.0.3
+Docker $ source catkin_make.sh
 Docker $ roslaunch lane_following lane_following.launch
 ```
 
 ### Terminal 2
 Publish a virtual trigger to start the lane following.
 ```
-Host PC $ ssh <user_name>@10.42.0.3
+Host PC $ ssh ubuntu@10.42.0.3
 
 KV260 $ cd ~/dt-kv260
 KV260 $ source docker_join.sh
