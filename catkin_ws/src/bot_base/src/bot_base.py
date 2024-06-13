@@ -81,7 +81,7 @@ class UartLite:
                 break
             self.uart.write(TX_FIFO, ord(i))
             wr_count += 1
-        return wr_count   
+        return wr_count
 
     def readline(self):
         ret = ""
@@ -98,41 +98,53 @@ uart = UartLite(overlay.axi_uartlite_0)
 
 class Motor_control():
     def __init__(self):
-        
+        self.linear_x = 0
+        self.angular_z = 0
+
         # Subscriber
         self.sub_cmd = rospy.Subscriber("cmd_vel", Twist, self.cb_cmd_vel)
+        rospy.Timer(rospy.Duration(0.2), self.cmd_vel_control)
 
 
     def cb_cmd_vel(self, msg):
-        self.cmd_vel_control(msg.linear.x, msg.angular.z)
+        self.linear_x = msg.linear.x
+        self.angular_z = msg.angular.z
 
-    def cmd_vel_control(self, linear_x, angular_z):
+    def cmd_vel_control(self,event):
+        linear_x, angular_z = self.linear_x,self.angular_z
+        print("linear_x, angular_z ",linear_x, angular_z)
 
         if (linear_x==0 and angular_z==0):
             speed_wish_right, speed_wish_left = 0, 0
         else:
+            # tmp_r = (angular_z*0.5)/2 + linear_x
+            # tmp_l = linear_x*2 - tmp_r
             tmp_r =linear_x + angular_z
             tmp_l = linear_x - angular_z
+            # float WHEEL_DIST = 5;
+            # float speed_wish_right = ((cmd_vel.angular.z * WHEEL_DIST)/2 + cmd_vel.linear.x);
+            # float speed_wish_left = (cmd_vel.linear.x * 2-speed_wish_right);
 
-            if tmp_r > 0: speed_wish_right = int(50 + tmp_r*205)
-            else: speed_wish_right = int(-50 + tmp_r*205)
-                
-            if tmp_l > 0: speed_wish_left = int(50 + tmp_l*205)
-            else: speed_wish_left = int(-50 + tmp_l*205)
+
+            if tmp_r > 0: speed_wish_right = int(125 + tmp_r*75)
+            else: speed_wish_right = int(-125 + tmp_r*75)
+
+            if tmp_l > 0: speed_wish_left = int(125 + tmp_l*75)
+            else: speed_wish_left = int(-125 + tmp_l*75)
 
             if speed_wish_right > 255: speed_wish_right = 255
             if speed_wish_right < -255: speed_wish_right = -255
             if speed_wish_left > 255: speed_wish_left = 255
             if speed_wish_left < -255: speed_wish_left = -255
-        
+
         # print("speed_wish_right, speed_wish_left= ",speed_wish_right, ",",speed_wish_left)
-        
+
         pkg="1" if speed_wish_right>=0 else "0"
         speed_wish_right = abs(speed_wish_right)
         pkg += str(speed_wish_right//100)
         pkg += str((speed_wish_right%100)//10)
         pkg += str(speed_wish_right%10)
-        
+
         if speed_wish_left>=0: pkg += "1"
         else : pkg += "0"
         speed_wish_left = abs(speed_wish_left)
@@ -140,9 +152,9 @@ class Motor_control():
         pkg += str((speed_wish_left%100)//10)
         pkg += str(speed_wish_left%10)
         pkg += "\n"
-        
+
         # print("uart pkg= ", pkg)
-        
+
         uart.write(pkg)
 
 
@@ -150,4 +162,3 @@ if __name__=="__main__":
     rospy.init_node("bot_base", anonymous=True)
     motor_control = Motor_control()
     rospy.spin()
-    

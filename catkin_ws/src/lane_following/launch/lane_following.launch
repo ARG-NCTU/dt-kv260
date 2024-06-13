@@ -2,7 +2,8 @@
     <arg name="pkg_name" value="lane_following"/>
 
     <node pkg="$(arg pkg_name)" type="lane_following.py" name="lane_following"  output="screen">
-        <remap from="image_raw" to="left_raw"/>
+        <remap from="image_raw" to="/camera/color/image_raw"/>
+	<remap from="cmd_vel" to="/cmd_vel_mux/input/teleop"/>
     </node>
 
 </launch>
